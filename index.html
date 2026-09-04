@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -14,27 +15,61 @@
 
 <body>
 
+    <!-- =========================
+         شريط التنقل
+    ========================= -->
+
     <nav class="navbar">
 
         <h2>موقعي 🚀</h2>
 
-<div class="nav-links">
-    <a href="index.html" class="active">الرئيسية</a>
-    <a href="about.html">عني</a>
-    <a href="projects.html">مشاريعي</a>
-    <a href="contact.html">تواصل معي</a>
-</div>  
-</nav>
+        <div class="nav-links">
+
+            <a href="index.html" class="active">
+                الرئيسية
+            </a>
+
+            <a href="about.html">
+                عني
+            </a>
+
+            <a href="projects.html">
+                مشاريعي
+            </a>
+
+            <a href="contact.html">
+                تواصل معي
+            </a>
+
+            <!-- 🌙☀️ زر تغيير الوضع -->
+
+            <button id="theme-button" class="theme-button">
+                ☀️
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         الصفحة الرئيسية
+    ========================= -->
 
     <header>
 
-        <h1>مرحباً بك 👋</h1>
+        <h1>
+            مرحباً بك 👋
+        </h1>
 
     </header>
 
+
     <div class="container">
 
-        <h2>هذا أول موقع لي 🚀</h2>
+        <h2>
+            هذا أول موقع لي 🚀
+        </h2>
 
         <p>
             أقوم الآن بتعلم HTML و CSS باستخدام GitHub Pages.
@@ -46,6 +81,63 @@
 
     </div>
 
+
+    <!-- =========================
+         Dark / Light Mode
+    ========================= -->
+
+    <script>
+
+        const themeButton = document.getElementById("theme-button");
+
+
+        // تحميل الوضع المحفوظ
+
+        const savedTheme = localStorage.getItem("theme");
+
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        // عند الضغط على الزر
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+
+            // الوضع الفاتح
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "light");
+
+            }
+
+
+            // الوضع الداكن
+
+            else {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
+
 </body>
 
 </html>
+```
