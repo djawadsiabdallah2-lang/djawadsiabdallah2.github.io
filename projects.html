@@ -33,7 +33,6 @@
 
         .projects-hero h1 {
             font-size: 48px;
-
             margin: 0 0 15px;
         }
 
@@ -43,13 +42,9 @@
 
         .projects-hero p {
             max-width: 700px;
-
             margin: auto;
-
             color: #cccccc;
-
             font-size: 19px;
-
             line-height: 1.8;
         }
 
@@ -60,9 +55,7 @@
 
         .projects-container {
             max-width: 1200px;
-
             margin: auto;
-
             padding: 70px 20px;
         }
 
@@ -73,10 +66,7 @@
 
         .project-list {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
@@ -188,7 +178,6 @@
 
         .project-box h2 {
             font-size: 28px;
-
             margin: 10px 0;
         }
 
@@ -198,9 +187,7 @@
 
         .project-box p {
             color: #bbbbbb;
-
             font-size: 17px;
-
             line-height: 1.8;
         }
 
@@ -319,14 +306,259 @@
 
         .development-box h2 {
             font-size: 30px;
-
             margin-top: 0;
         }
 
         .development-box p {
             color: #bbbbbb;
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           🖼️ معرض الأعمال الجديد
+        ================================================== */
+
+        .portfolio-gallery {
+            margin-top: 100px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .gallery-title .gallery-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-title h2 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .gallery-title h2 span {
+            color: #00a8ff;
+        }
+
+        .gallery-title p {
+            color: #aaaaaa;
+            font-size: 17px;
+        }
+
+
+        /* شبكة المعرض */
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* بطاقة المعرض */
+
+        .gallery-card {
+            position: relative;
+
+            background: #182631;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid
+                rgba(0, 168, 255, 0.12);
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.25);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+
+            border-color:
+                rgba(0, 168, 255, 0.5);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* الجزء العلوي */
+
+        .gallery-image {
+            height: 200px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 80px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #203746
+                );
+        }
+
+        .gallery-game {
+            background:
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #12344a
+                );
+        }
+
+        .gallery-website {
+            background:
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #263746
+                );
+        }
+
+        .gallery-future {
+            background:
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #252525
+                );
+        }
+
+
+        /* محتوى البطاقة */
+
+        .gallery-content {
+            padding: 25px;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0, 168, 255, 0.1);
+
+            color: #00a8ff;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .gallery-content h3 {
+            font-size: 25px;
+            margin: 15px 0 10px;
+        }
+
+        .gallery-content p {
+            color: #aaaaaa;
 
             line-height: 1.8;
+
+            min-height: 85px;
+
+            margin: 0;
+        }
+
+
+        /* تقنيات المعرض */
+
+        .gallery-tech {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin: 20px 0;
+        }
+
+        .gallery-tech span {
+            padding: 6px 11px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0, 168, 255, 0.08);
+
+            color: #00a8ff;
+
+            border: 1px solid
+                rgba(0, 168, 255, 0.15);
+
+            font-size: 12px;
+        }
+
+
+        /* زر المعرض */
+
+        .gallery-button {
+            display: block;
+
+            text-align: center;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background: #00a8ff;
+
+            color: #101820;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .gallery-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 168, 255, 0.25);
+        }
+
+
+        /* زر المشروع القادم */
+
+        .gallery-button.disabled {
+            background:
+                rgba(0, 168, 255, 0.08);
+
+            color: #777777;
+
+            border: 1px solid
+                rgba(0, 168, 255, 0.12);
+
+            cursor: default;
+        }
+
+        .gallery-button.disabled:hover {
+            transform: none;
+
+            box-shadow: none;
         }
 
 
@@ -388,6 +620,69 @@
 
 
         /* =========================
+           معرض الأعمال - الوضع الفاتح
+        ========================== */
+
+        body.light-mode .gallery-title p {
+            color: #666666;
+        }
+
+        body.light-mode .gallery-card {
+            background: white;
+
+            border-color:
+                rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        body.light-mode .gallery-content p {
+            color: #666666;
+        }
+
+        body.light-mode .gallery-image {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf4ff,
+                    #ffffff
+                );
+        }
+
+        body.light-mode .gallery-game,
+        body.light-mode .gallery-website {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf4ff,
+                    #ffffff
+                );
+        }
+
+        body.light-mode .gallery-future {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f3f3f3,
+                    #ffffff
+                );
+        }
+
+        body.light-mode .gallery-tech span {
+            background:
+                rgba(0, 119, 204, 0.06);
+        }
+
+        body.light-mode .gallery-button.disabled {
+            background: #eeeeee;
+
+            color: #777777;
+        }
+
+
+        /* =========================
            الهاتف
         ========================== */
 
@@ -401,7 +696,20 @@
                 grid-column: span 1;
             }
 
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-card {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
         }
+
 
         @media (max-width: 600px) {
 
@@ -419,6 +727,24 @@
 
             .development-box {
                 padding: 30px 20px;
+            }
+
+            .portfolio-gallery {
+                margin-top: 70px;
+            }
+
+            .gallery-title h2 {
+                font-size: 30px;
+            }
+
+            .gallery-image {
+                height: 170px;
+
+                font-size: 65px;
+            }
+
+            .gallery-content {
+                padding: 22px;
             }
 
         }
@@ -644,7 +970,176 @@
         </div>
 
 
-        <!-- قسم التطوير -->
+        <!-- =========================
+             🖼️ معرض الأعمال
+        ========================== -->
+
+        <section class="portfolio-gallery">
+
+            <div class="gallery-title">
+
+                <div class="gallery-icon">
+                    🖼️
+                </div>
+
+                <h2>
+                    معرض <span>أعمالي</span>
+                </h2>
+
+                <p>
+                    بعض المشاريع التي أعمل عليها وأطورها 🚀
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <!-- 🎮 لعبة 3D -->
+
+                <article class="gallery-card">
+
+                    <div class="gallery-image gallery-game">
+                        🎮
+                    </div>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-tag">
+                            🎮 Game Development
+                        </span>
+
+                        <h3>
+                            لعبة 3D
+                        </h3>
+
+                        <p>
+                            مشروع لعبة ثلاثية الأبعاد أطورها
+                            باستخدام Godot 4 و GDScript،
+                            مع أنظمة متعددة للعبة.
+                        </p>
+
+
+                        <div class="gallery-tech">
+
+                            <span>Godot 4</span>
+                            <span>GDScript</span>
+                            <span>3D</span>
+
+                        </div>
+
+
+                        <a
+                            href="project2.html"
+                            class="gallery-button">
+
+                            🎮 عرض المشروع
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 🌐 الموقع -->
+
+                <article class="gallery-card">
+
+                    <div class="gallery-image gallery-website">
+                        🌐
+                    </div>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-tag">
+                            🌐 Web Development
+                        </span>
+
+                        <h3>
+                            موقعي الأول
+                        </h3>
+
+                        <p>
+                            أول تجربة لي في تطوير المواقع
+                            باستخدام HTML و CSS،
+                            والذي أصبح الآن موقعي الشخصي.
+                        </p>
+
+
+                        <div class="gallery-tech">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Web</span>
+
+                        </div>
+
+
+                        <a
+                            href="project1.html"
+                            class="gallery-button">
+
+                            🌐 عرض المشروع
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 🚧 مشروع قادم -->
+
+                <article class="gallery-card">
+
+                    <div class="gallery-image gallery-future">
+                        🚧
+                    </div>
+
+                    <div class="gallery-content">
+
+                        <span class="gallery-tag">
+                            🔥 Coming Soon
+                        </span>
+
+                        <h3>
+                            مشروع جديد
+                        </h3>
+
+                        <p>
+                            مشروع جديد في الطريق...
+                            سأكشف عنه عندما يصبح جاهزًا. 🚀
+                        </p>
+
+
+                        <div class="gallery-tech">
+
+                            <span>؟؟؟</span>
+                            <span>🔥</span>
+                            <span>🚀</span>
+
+                        </div>
+
+
+                        <span class="gallery-button disabled">
+                            🔒 قريبًا
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             قسم التطوير
+        ========================== -->
 
         <div class="development-box">
 
@@ -691,6 +1186,7 @@
 
     <!-- =========================
          الوضع الليلي / الفاتح
+         ⚠️ محفوظ كما هو
     ========================== -->
 
     <script>
