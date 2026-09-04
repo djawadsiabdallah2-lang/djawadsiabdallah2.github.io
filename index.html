@@ -1,47 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>موقعي الأول</title>
+    <title>دجواد | مطور ومصمم</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
     <!-- =========================
          شريط التنقل
-    ========================= -->
+    ========================== -->
 
     <nav class="navbar">
 
-        <h2>موقعي 🚀</h2>
+        <h2>دجواد 🚀</h2>
 
         <div class="nav-links">
 
-            <a href="index.html" class="active">
-                الرئيسية
-            </a>
+            <a href="index.html" class="active">الرئيسية</a>
 
-            <a href="about.html">
-                عني
-            </a>
+            <a href="about.html">عني</a>
 
-            <a href="projects.html">
-                مشاريعي
-            </a>
+            <a href="projects.html">مشاريعي</a>
 
-            <a href="contact.html">
-                تواصل معي
-            </a>
-
-            <!-- 🌙☀️ زر تغيير الوضع -->
+            <a href="contact.html">تواصل معي</a>
 
             <button id="theme-button" class="theme-button">
                 ☀️
@@ -53,47 +40,427 @@
 
 
     <!-- =========================
-         الصفحة الرئيسية
-    ========================= -->
+         الواجهة الرئيسية
+    ========================== -->
 
-    <header>
+    <header class="hero">
 
-        <h1>
-            مرحباً بك 👋
-        </h1>
+        <div class="hero-content">
+
+            <span class="welcome-badge">
+                👋 أهلاً بك في موقعي
+            </span>
+
+            <h1>
+                مرحباً، أنا <span>دجواد</span> 🚀
+            </h1>
+
+            <p>
+                أتعلم البرمجة وأبني مشاريعي الخاصة
+                باستخدام HTML و CSS و Godot.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="projects.html" class="button">
+                    🎮 شاهد مشاريعي
+                </a>
+
+                <a href="contact.html" class="button secondary-button">
+                    📩 تواصل معي
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="code-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>
+                مطور مبتدئ 🚀
+            </h3>
+
+            <p>
+                أتعلم، أجرب، وأطور مشاريعي
+                خطوة بخطوة.
+            </p>
+
+        </div>
 
     </header>
 
 
-    <div class="container">
+    <!-- =========================
+         عني
+    ========================== -->
 
-        <h2>
-            هذا أول موقع لي 🚀
-        </h2>
+    <section class="home-section">
 
-        <p>
-            أقوم الآن بتعلم HTML و CSS باستخدام GitHub Pages.
-        </p>
+        <div class="section-title">
 
-        <a href="page2.html" class="button">
-            اضغط هنا
-        </a>
+            <span>👨‍💻</span>
 
-    </div>
+            <h2>من أنا؟</h2>
+
+        </div>
+
+        <div class="home-card">
+
+            <h3>
+                شغوف بالتعلم وصناعة الأشياء الجديدة 🔥
+            </h3>
+
+            <p>
+                أنا أتعلم تطوير المواقع والألعاب،
+                وأحب تجربة أفكار جديدة وتحويلها
+                إلى مشاريع حقيقية.
+            </p>
+
+            <a href="about.html" class="text-button">
+                معرفة المزيد ←
+            </a>
+
+        </div>
+
+    </section>
 
 
     <!-- =========================
-         Dark / Light Mode
-    ========================= -->
+         المهارات
+    ========================== -->
+
+    <section class="home-section">
+
+        <div class="section-title">
+
+            <span>🛠️</span>
+
+            <h2>مهاراتي</h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌐</div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    بناء صفحات الويب وتنظيم المحتوى.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🎨</div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    تصميم المواقع وإضافة
+                    التأثيرات والحركات.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🎮</div>
+
+                <h3>Godot</h3>
+
+                <p>
+                    تطوير ألعاب ثلاثية الأبعاد
+                    باستخدام Godot 4.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>GDScript</h3>
+
+                <p>
+                    كتابة الأكواد والتحكم
+                    في عناصر اللعبة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         الإحصائيات
+    ========================== -->
+
+    <section class="stats-section">
+
+        <div class="stat">
+
+            <strong>2+</strong>
+
+            <span>مشاريع</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>4</strong>
+
+            <span>تقنيات</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>∞</strong>
+
+            <span>أفكار جديدة</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         المشاريع
+    ========================== -->
+
+    <section class="home-section">
+
+        <div class="section-title">
+
+            <span>🚀</span>
+
+            <h2>أحدث مشاريعي</h2>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    موقعي الأول
+                </h3>
+
+                <p>
+                    أول موقع شخصي أقوم ببنائه
+                    باستخدام HTML و CSS.
+                </p>
+
+                <a href="project1.html" class="text-button">
+                    عرض المشروع →
+                </a>
+
+            </div>
+
+
+            <div class="project-card featured-project">
+
+                <div class="project-icon">
+                    🎮
+                </div>
+
+                <span class="project-badge">
+                    ⭐ المشروع الرئيسي
+                </span>
+
+                <h3>
+                    لعبة ثلاثية الأبعاد
+                </h3>
+
+                <p>
+                    مشروع لعبة 3D أقوم بتطويرها
+                    باستخدام Godot 4 و GDScript.
+                </p>
+
+                <a href="project2.html" class="text-button">
+                    عرض المشروع →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    💡
+                </div>
+
+                <h3>
+                    مشروع قادم
+                </h3>
+
+                <p>
+                    هناك المزيد من الأفكار
+                    والمشاريع في الطريق...
+                </p>
+
+                <span class="coming-soon">
+                    قريباً 🔥
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         الإنجازات
+    ========================== -->
+
+    <section class="home-section">
+
+        <div class="section-title">
+
+            <span>🏆</span>
+
+            <h2>إنجازاتي</h2>
+
+        </div>
+
+
+        <div class="achievements">
+
+            <div class="achievement">
+
+                <span>✅</span>
+
+                <div>
+
+                    <h3>
+                        إنشاء أول موقع
+                    </h3>
+
+                    <p>
+                        بناء ونشر موقع شخصي باستخدام GitHub Pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <span>🎮</span>
+
+                <div>
+
+                    <h3>
+                        تطوير لعبة 3D
+                    </h3>
+
+                    <p>
+                        بناء أنظمة متعددة داخل مشروع لعبة باستخدام Godot.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <span>📚</span>
+
+                <div>
+
+                    <h3>
+                        الاستمرار في التعلم
+                    </h3>
+
+                    <p>
+                        تعلم تقنيات جديدة وتطوير المشاريع باستمرار.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         دعوة للتواصل
+    ========================== -->
+
+    <section class="contact-banner">
+
+        <div>
+
+            <h2>
+                هل تريد التواصل معي؟ 📩
+            </h2>
+
+            <p>
+                يمكنك إرسال رسالة لي من خلال صفحة التواصل.
+            </p>
+
+        </div>
+
+        <a href="contact.html" class="button">
+            تواصل معي
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 دجواد — جميع الحقوق محفوظة 🚀
+        </p>
+
+        <p>
+            تم التطوير باستخدام ❤️ و HTML و CSS
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         الوضع الليلي / الفاتح
+    ========================== -->
 
     <script>
 
-        const themeButton = document.getElementById("theme-button");
+        const themeButton =
+            document.getElementById("theme-button");
 
-
-        // تحميل الوضع المحفوظ
-
-        const savedTheme = localStorage.getItem("theme");
+        const savedTheme =
+            localStorage.getItem("theme");
 
 
         if (savedTheme === "light") {
@@ -105,27 +472,20 @@
         }
 
 
-        // عند الضغط على الزر
-
         themeButton.addEventListener("click", function () {
 
             document.body.classList.toggle("light-mode");
 
 
-            // الوضع الفاتح
-
-            if (document.body.classList.contains("light-mode")) {
+            if (
+                document.body.classList.contains("light-mode")
+            ) {
 
                 themeButton.textContent = "🌙";
 
                 localStorage.setItem("theme", "light");
 
-            }
-
-
-            // الوضع الداكن
-
-            else {
+            } else {
 
                 themeButton.textContent = "☀️";
 
