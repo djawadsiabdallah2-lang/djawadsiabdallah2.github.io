@@ -18,8 +18,89 @@
             text-align: center;
         }
 
+        /* =========================
+           شريط التنقل
+        ========================= */
+
+        .navbar {
+            background: rgba(27, 38, 59, 0.95);
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar h2 {
+            margin: 0;
+            color: #00a8ff;
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+
+            padding: 8px 4px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00a8ff;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: #00a8ff;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* الصفحة الحالية */
+
+        .nav-links a.active {
+            color: #00a8ff;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           المحتوى
+        ========================= */
+
         .container {
-            padding-top: 80px;
+            padding: 60px 20px;
         }
 
         h1 {
@@ -27,14 +108,32 @@
             color: #00aaff;
         }
 
+
+        /* =========================
+           البطاقة
+        ========================= */
+
         .card {
             width: 80%;
             max-width: 600px;
+
             margin: 40px auto;
+
             padding: 30px;
+
             background: #182631;
+
             border-radius: 20px;
+
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
         .icon {
@@ -51,35 +150,133 @@
             line-height: 1.8;
         }
 
+
+        /* =========================
+           الزر
+        ========================= */
+
         .button {
             display: inline-block;
+
             padding: 14px 30px;
+
             background: #00aaff;
+
             color: white;
+
             text-decoration: none;
+
             border-radius: 10px;
+
             font-size: 18px;
+
             transition: 0.3s;
         }
 
         .button:hover {
             background: #0077cc;
+
             transform: scale(1.05);
+        }
+
+
+        /* =========================
+           الهاتف 📱
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 45px 15px;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+
+            .card {
+                width: 100%;
+                padding: 25px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
-<div class="nav-links">
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html" class="active">عني</a>
-    <a href="projects.html">مشاريعي</a>
-    <a href="contact.html">تواصل معي</a>
-</div>
-            <h2>مرحباً!</h2>
+
+    <!-- =========================
+         شريط التنقل
+    ========================= -->
+
+    <nav class="navbar">
+
+        <h2>موقعي 🚀</h2>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="about.html" class="active">
+                عني
+            </a>
+
+            <a href="projects.html">
+                مشاريعي
+            </a>
+
+            <a href="contact.html">
+                تواصل معي
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         المحتوى
+    ========================= -->
+
+    <div class="container">
+
+        <h1>👋 عني</h1>
+
+        <div class="card">
+
+            <div class="icon">
+                🚀
+            </div>
+
+            <h2>
+                مرحباً!
+            </h2>
 
             <p>
                 أنا أتعلم HTML و CSS وأقوم ببناء
@@ -87,11 +284,12 @@
             </p>
 
             <p>
-                هذه مجرد البداية، وسأستمر في تطوير موقعي وإضافة
-                المزيد من الصفحات والمشاريع. 🔥
+                هذه مجرد البداية، وسأستمر في تطوير
+                موقعي وإضافة المزيد من الصفحات والمشاريع. 🔥
             </p>
 
         </div>
+
 
         <a href="index.html" class="button">
             ⬅️ العودة إلى الرئيسية
@@ -99,6 +297,8 @@
 
     </div>
 
+
 </body>
 
 </html>
+
