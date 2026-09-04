@@ -1,81 +1,275 @@
+```css
+/* =========================
+   الإعدادات الأساسية
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #101820;
     color: white;
     text-align: center;
+    animation: pageLoad 0.7s ease;
 }
 
-header {
-    background: #1b263b;
-    padding: 25px;
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-h1 {
-    margin: 0;
-    font-size: 40px;
-}
 
-p {
-    font-size: 20px;
-    color: #cccccc;
-}
+/* =========================
+   شريط التنقل
+========================= */
 
-.container {
-    padding: 80px 20px;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #00a8ff;
-    color: white;
-}
-
-button:hover {
-    background: #0097e6;
-}
 .navbar {
-    background: #1b263b;
-    padding: 15px 40px;
+    background: rgba(27, 38, 59, 0.95);
+    padding: 18px 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .navbar h2 {
     margin: 0;
     color: #00a8ff;
+    font-size: 25px;
+
+    transition: 0.3s;
 }
+
+.navbar h2:hover {
+    transform: scale(1.05);
+}
+
+
+/* روابط التنقل */
 
 .nav-links {
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
+    position: relative;
+
     color: white;
     text-decoration: none;
     font-size: 18px;
+
+    padding: 8px 4px;
+
+    transition: 0.3s;
+}
+
+
+/* خط يظهر أسفل الرابط */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #00a8ff;
+
     transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #00a8ff;
 }
-.button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #00aaff;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-.button:hover {
-    background: #0077cc;
+
+/* =========================
+   العناوين
+========================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #1b263b,
+        #182631
+    );
+
+    padding: 70px 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
+
+h1 {
+    margin: 0;
+    font-size: 45px;
+}
+
+p {
+    font-size: 20px;
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   الحاوية
+========================= */
+
+.container {
+    padding: 80px 20px;
+}
+
+
+/* =========================
+   الأزرار
+========================= */
+
+button,
+.button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    font-size: 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: #00a8ff;
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.25);
+}
+
+button:hover,
+.button:hover {
+    background: #0097e6;
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow: 0 8px 20px rgba(0, 168, 255, 0.4);
+}
+
+
+/* =========================
+   البطاقات
+========================= */
+
+.card {
+    background: #182631;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   تأثيرات عامة
+========================= */
+
+a {
+    transition: 0.3s;
+}
+
+::selection {
+    background: #00a8ff;
+    color: white;
+}
+
+
+/* =========================
+   الهاتف 📱
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 50px 15px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 50px 15px;
+    }
+
+    button,
+    .button {
+        font-size: 16px;
+        padding: 12px 22px;
+    }
+}
+```
