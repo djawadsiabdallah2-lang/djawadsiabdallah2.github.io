@@ -38,7 +38,7 @@
 
     .game-card {
         width: 80%;
-        max-width: 750px;
+        max-width: 800px;
         margin: auto;
         padding: 35px;
         background: #182631;
@@ -56,10 +56,17 @@
         font-size: 30px;
     }
 
-    .game-card p {
+    .game-card > p {
         color: #dddddd;
         font-size: 19px;
         line-height: 1.9;
+    }
+
+    .section-title {
+        color: #00aaff;
+        font-size: 28px;
+        margin-top: 45px;
+        margin-bottom: 25px;
     }
 
     .features {
@@ -67,7 +74,6 @@
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
-        margin-top: 35px;
     }
 
     .feature {
@@ -91,12 +97,42 @@
     }
 
     .feature p {
+        color: #dddddd;
         font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .technology {
+        width: 200px;
+        padding: 20px;
+        background: #101820;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .technology:hover {
+        transform: translateY(-8px);
+    }
+
+    .technology h3 {
+        color: #00aaff;
+    }
+
+    .technology p {
+        color: #dddddd;
+        font-size: 16px;
+    }
+
+    .buttons {
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
     .button {
         display: inline-block;
-        margin-top: 40px;
         padding: 14px 30px;
         background: #00aaff;
         color: white;
@@ -127,6 +163,7 @@
         لعبة ثلاثية الأبعاد أعمل على تطويرها باستخدام Godot 🚀
     </p>
 
+
     <div class="game-card">
 
         <div class="game-icon">🎮</div>
@@ -137,6 +174,13 @@
             هذا مشروع لعبة ثلاثية الأبعاد أعمل على تطويرها
             وإضافة العديد من الأنظمة والميزات إليها.
         </p>
+
+
+        <!-- مميزات اللعبة -->
+
+        <h2 class="section-title">
+            ⭐ مميزات اللعبة
+        </h2>
 
         <div class="features">
 
@@ -168,6 +212,19 @@
 
             <div class="feature">
 
+                <div class="feature-icon">👹</div>
+
+                <h3>Boss</h3>
+
+                <p>
+                    زعيم قوي يمثل تحديًا للاعب.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
                 <div class="feature-icon">❤️</div>
 
                 <h3>الصحة</h3>
@@ -186,7 +243,82 @@
                 <h3>النقاط</h3>
 
                 <p>
-                    نظام نقاط وقتل للأعداء.
+                    نظام نقاط ومكافآت عند هزيمة الأعداء.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🔑</div>
+
+                <h3>المفاتيح والأبواب</h3>
+
+                <p>
+                    جمع المفاتيح وفتح الأبواب المغلقة.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- التقنيات المستخدمة -->
+
+        <h2 class="section-title">
+            💻 التقنيات المستخدمة
+        </h2>
+
+        <div class="features">
+
+            <div class="technology">
+
+                <div class="feature-icon">🎮</div>
+
+                <h3>Godot 4</h3>
+
+                <p>
+                    محرك تطوير اللعبة.
+                </p>
+
+            </div>
+
+
+            <div class="technology">
+
+                <div class="feature-icon">🧩</div>
+
+                <h3>GDScript</h3>
+
+                <p>
+                    لغة البرمجة المستخدمة في اللعبة.
+                </p>
+
+            </div>
+
+
+            <div class="technology">
+
+                <div class="feature-icon">🌍</div>
+
+                <h3>3D</h3>
+
+                <p>
+                    عالم ثلاثي الأبعاد للعبة.
+                </p>
+
+            </div>
+
+
+            <div class="technology">
+
+                <div class="feature-icon">🎨</div>
+
+                <h3>3D Assets</h3>
+
+                <p>
+                    نماذج وعناصر ثلاثية الأبعاد.
                 </p>
 
             </div>
@@ -195,9 +327,20 @@
 
     </div>
 
-    <a href="projects.html" class="button">
-        ⬅️ العودة إلى مشاريعي
-    </a>
+
+    <!-- أزرار التنقل -->
+
+    <div class="buttons">
+
+        <a href="index.html" class="button">
+            🏠 الرئيسية
+        </a>
+
+        <a href="projects.html" class="button">
+            🚀 مشاريعي
+        </a>
+
+    </div>
 
 </div>
 ```
