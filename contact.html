@@ -1,235 +1,270 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تواصل معي</title>
+    <title>تواصل معي</title>
 
-<style>
+    <style>
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #101820;
-        color: white;
-        text-align: center;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101820;
+            color: white;
+            text-align: center;
+        }
 
-    .container {
-        padding: 60px 20px;
-    }
+        .container {
+            padding: 60px 20px;
+        }
 
-    h1 {
-        font-size: 45px;
-        color: #00aaff;
-        margin-bottom: 15px;
-    }
+        h1 {
+            font-size: 45px;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
 
-    .subtitle {
-        color: #bbbbbb;
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
+        .subtitle {
+            color: #bbbbbb;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
 
-    .contact-card {
-        width: 80%;
-        max-width: 600px;
-        margin: auto;
-        padding: 35px;
-        background: #182631;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+        .contact-card {
+            width: 90%;
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background: #182631;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
 
-    .icon {
-        font-size: 70px;
-        margin-bottom: 10px;
-    }
+        .form-group {
+            margin-bottom: 25px;
+            text-align: right;
+        }
 
-    .contact-card h2 {
-        color: #00aaff;
-        margin-bottom: 30px;
-    }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #00aaff;
+            font-size: 18px;
+        }
 
-    .form-group {
-        text-align: right;
-        margin-bottom: 20px;
-    }
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #101820;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
 
-    label {
-        display: block;
-        margin-bottom: 8px;
-        color: #dddddd;
-        font-size: 17px;
-    }
+        input:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 2px #00aaff;
+        }
 
-    input,
-    textarea {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 13px;
-        border: none;
-        border-radius: 10px;
-        background: #101820;
-        color: white;
-        font-size: 16px;
-        outline: none;
-    }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
 
-    input:focus,
-    textarea:focus {
-        box-shadow: 0 0 0 2px #00aaff;
-    }
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 14px 30px;
+            background: #00aaff;
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    textarea {
-        height: 150px;
-        resize: vertical;
-    }
+        .button:hover {
+            background: #0077cc;
+            transform: scale(1.05);
+        }
 
-    .send-button {
-        width: 100%;
-        padding: 14px;
-        border: none;
-        background: #00aaff;
-        color: white;
-        border-radius: 10px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-    .send-button:hover {
-        background: #0077cc;
-        transform: scale(1.02);
-    }
+        .loading {
+            display: none;
+            margin-top: 15px;
+            color: #00aaff;
+            font-size: 17px;
+        }
 
-    .buttons {
-        margin-top: 40px;
-    }
-
-    .button {
-        display: inline-block;
-        margin: 8px;
-        padding: 14px 30px;
-        background: #00aaff;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
-    }
-
-    .button:hover {
-        background: #0077cc;
-        transform: scale(1.05);
-    }
-
-</style>
-```
+    </style>
 
 </head>
 
 <body>
 
-```
-<div class="container">
+    <div class="container">
 
-    <h1>📩 تواصل معي</h1>
+        <h1>📩 تواصل معي</h1>
 
-    <p class="subtitle">
-        إذا أردت التواصل معي، يمكنك استخدام النموذج التالي 👇
-    </p>
+        <p class="subtitle">
+            يمكنك إرسال رسالة لي من خلال النموذج التالي 🚀
+        </p>
+
+        <div class="contact-card">
+
+            <form id="contact-form">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        الاسم
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="اكتب اسمك"
+                        required
+                    >
+
+                </div>
 
 
-    <div class="contact-card">
+                <div class="form-group">
 
-        <div class="icon">💬</div>
+                    <label for="email">
+                        البريد الإلكتروني
+                    </label>
 
-        <h2>أرسل رسالة</h2>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                </div>
 
 
-<form action="https://formspree.io/f/xdeodwnq" method="POST">
+                <div class="form-group">
 
-    <input type="hidden" name="_next" value="https://اسمك.github.io/اسم-المشروع/success.html">
-    <div class="form-group">
+                    <label for="message">
+                        الرسالة
+                    </label>
 
-                <label for="name">
-                    الاسم
-                </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="اكتب رسالتك هنا..."
+                        required
+                    ></textarea>
 
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="اكتب اسمك"
-                    required
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button"
                 >
+                    📤 إرسال الرسالة
+                </button>
 
-            </div>
+                <div id="loading" class="loading">
+                    ⏳ جاري إرسال الرسالة...
+                </div>
 
+            </form>
 
-            <div class="form-group">
-
-                <label for="email">
-                    البريد الإلكتروني
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="example@email.com"
-                    required
-                >
-
-            </div>
+        </div>
 
 
-            <div class="form-group">
+        <div class="buttons">
 
-                <label for="message">
-                    الرسالة
-                </label>
+            <a href="index.html" class="button">
+                🏠 الرئيسية
+            </a>
 
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="اكتب رسالتك هنا..."
-                    required
-                ></textarea>
+            <a href="projects.html" class="button">
+                🚀 مشاريعي
+            </a>
 
-            </div>
+        </div>
 
-
-            <button type="submit" class="send-button">
-                📤 إرسال الرسالة
-            </button>
-
-        </form>
-<input type="hidden" name="_next" value="https://djawadsiabdallah2-lang.github.io/djawadsiabdallah2.github.io/success.html">
     </div>
 
 
-    <div class="buttons">
+    <script>
 
-        <a href="index.html" class="button">
-            🏠 الرئيسية
-        </a>
+        const form = document.getElementById("contact-form");
+        const loading = document.getElementById("loading");
 
-        <a href="projects.html" class="button">
-            🚀 مشاريعي
-        </a>
+        form.addEventListener("submit", async function(event) {
 
-    </div>
+            event.preventDefault();
 
-</div>
-```
+            loading.style.display = "block";
+
+            const formData = new FormData(form);
+
+            try {
+
+                const response = await fetch(
+                    "https://formspree.io/f/xdeodwnq",
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+                if (response.ok) {
+
+                    window.location.href = "success.html";
+
+                } else {
+
+                    loading.style.display = "none";
+
+                    alert("❌ حدث خطأ أثناء إرسال الرسالة.");
+
+                }
+
+            } catch (error) {
+
+                loading.style.display = "none";
+
+                alert("❌ تعذر إرسال الرسالة. تحقق من اتصال الإنترنت.");
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
+
