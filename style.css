@@ -17,20 +17,14 @@ body {
     color: white;
     text-align: center;
 
-    animation: pageLoad 0.7s ease;
-
     transition:
         background 0.4s ease,
         color 0.4s ease;
+
+    animation: pageLoad 0.7s ease;
 }
 
-
-/* =========================
-   حركة دخول الصفحة
-========================= */
-
 @keyframes pageLoad {
-
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -63,15 +57,10 @@ body {
 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
-    transition:
-        background 0.4s ease,
-        box-shadow 0.4s ease;
+    transition: 0.4s;
 }
-
-
-/* اسم الموقع */
 
 .navbar h2 {
     margin: 0;
@@ -114,9 +103,6 @@ body {
     transition: 0.3s;
 }
 
-
-/* الخط أسفل الرابط */
-
 .nav-links a::after {
     content: "";
 
@@ -133,23 +119,17 @@ body {
     transition: 0.3s;
 }
 
-
 .nav-links a:hover {
     color: #00a8ff;
 }
-
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
-
-/* الصفحة الحالية */
-
 .nav-links a.active {
     color: #00a8ff;
 }
-
 
 .nav-links a.active::after {
     width: 100%;
@@ -157,12 +137,11 @@ body {
 
 
 /* =========================
-   زر Dark / Light
+   زر الوضع
 ========================= */
 
 .theme-button {
-
-    padding: 8px 14px;
+    padding: 8px 14px !important;
 
     border: none;
 
@@ -181,66 +160,157 @@ body {
     box-shadow: 0 4px 12px rgba(0, 168, 255, 0.25);
 }
 
-
 .theme-button:hover {
-
     background: #0097e6;
 
     transform: scale(1.08);
-
-    box-shadow: 0 6px 18px rgba(0, 168, 255, 0.4);
 }
 
 
 /* =========================
-   العناوين
+   Hero
 ========================= */
 
-header {
+.hero {
+    min-height: 650px;
 
-    background: linear-gradient(
-        135deg,
-        #1b263b,
-        #182631
-    );
+    padding: 90px 8%;
 
-    padding: 70px 20px;
+    display: flex;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    justify-content: center;
 
-    transition:
-        background 0.4s ease,
-        box-shadow 0.4s ease;
+    align-items: center;
+
+    gap: 80px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 168, 255, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #101820,
+            #182631
+        );
 }
 
-
-h1 {
-
-    margin: 0;
-
-    font-size: 45px;
+.hero-content {
+    max-width: 650px;
 }
 
+.welcome-badge {
+    display: inline-block;
 
-p {
+    padding: 10px 18px;
 
-    font-size: 20px;
+    border-radius: 30px;
 
+    background: rgba(0, 168, 255, 0.12);
+
+    color: #00a8ff;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(0, 168, 255, 0.25);
+}
+
+.hero h1 {
+    font-size: 55px;
+
+    margin: 10px 0 20px;
+}
+
+.hero h1 span {
+    color: #00a8ff;
+}
+
+.hero p {
     color: #cccccc;
 
-    line-height: 1.8;
+    font-size: 21px;
 
-    transition: color 0.4s ease;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
 }
 
 
 /* =========================
-   الحاوية
+   البطاقة الجانبية
 ========================= */
 
-.container {
+.hero-card {
+    width: 300px;
 
-    padding: 80px 20px;
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    background: rgba(24, 38, 49, 0.85);
+
+    border: 1px solid rgba(0, 168, 255, 0.2);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+
+    transition: 0.4s;
+}
+
+.hero-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+
+    box-shadow:
+        0 25px 60px rgba(0, 168, 255, 0.15);
+}
+
+.code-icon {
+    width: 100px;
+    height: 100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 25px;
+
+    background: #00a8ff;
+
+    color: white;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 30px rgba(0, 168, 255, 0.35);
+}
+
+.hero-card h3 {
+    font-size: 25px;
+
+    margin-top: 25px;
+}
+
+.hero-card p {
+    font-size: 17px;
 }
 
 
@@ -248,20 +318,14 @@ p {
    الأزرار
 ========================= */
 
-button,
 .button {
-
     display: inline-block;
 
     padding: 14px 30px;
 
     font-size: 18px;
 
-    border: none;
-
     border-radius: 10px;
-
-    cursor: pointer;
 
     background: #00a8ff;
 
@@ -275,10 +339,7 @@ button,
         0 5px 15px rgba(0, 168, 255, 0.25);
 }
 
-
-button:hover,
 .button:hover {
-
     background: #0097e6;
 
     transform:
@@ -289,167 +350,555 @@ button:hover,
         0 8px 20px rgba(0, 168, 255, 0.4);
 }
 
+.secondary-button {
+    background: transparent;
+
+    border: 1px solid #00a8ff;
+
+    box-shadow: none;
+}
+
+.secondary-button:hover {
+    background: #00a8ff;
+}
+
 
 /* =========================
-   البطاقات
+   الأقسام
 ========================= */
 
-.card {
+.home-section {
+    padding: 90px 8%;
+
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    font-size: 35px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   بطاقة عني
+========================= */
+
+.home-card {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background: #182631;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+
+    transition: 0.4s;
+}
+
+.home-card:hover {
+    transform: translateY(-8px);
+}
+
+.home-card h3 {
+    font-size: 26px;
+}
+
+.home-card p {
+    color: #cccccc;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   رابط نصي
+========================= */
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #00a8ff;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.text-button:hover {
+    transform: translateX(-5px);
+}
+
+
+/* =========================
+   المهارات
+========================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 30px 20px;
 
     background: #182631;
 
     border-radius: 20px;
 
-    padding: 30px;
-
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.35);
+        0 10px 30px rgba(0, 0, 0, 0.3);
 
-    transition:
-        0.3s,
-        background 0.4s ease;
+    transition: 0.35s;
+
+    border: 1px solid transparent;
 }
 
+.skill-card:hover {
+    transform: translateY(-10px);
 
-.card:hover {
-
-    transform: translateY(-8px);
+    border-color: #00a8ff;
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.45);
+        0 15px 35px rgba(0, 168, 255, 0.15);
+}
+
+.skill-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 23px;
+}
+
+.skill-card p {
+    color: #bbbbbb;
+
+    font-size: 16px;
+
+    line-height: 1.7;
 }
 
 
 /* =========================
-   تأثيرات عامة
+   الإحصائيات
 ========================= */
 
-a {
+.stats-section {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    padding: 70px 8%;
+
+    background: #182631;
+}
+
+.stat {
+    min-width: 180px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #101820;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 42px;
+
+    color: #00a8ff;
+
+    margin-bottom: 8px;
+}
+
+.stat span {
+    color: #cccccc;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   المشاريع
+========================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 35px 25px;
+
+    background: #182631;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.project-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 24px;
+}
+
+.project-card p {
+    color: #bbbbbb;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.featured-project {
+    border: 1px solid #00a8ff;
+
+    box-shadow:
+        0 10px 35px rgba(0, 168, 255, 0.12);
+}
+
+.project-badge {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 168, 255, 0.12);
+
+    color: #00a8ff;
+
+    font-size: 14px;
+}
+
+.coming-soon {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #00a8ff;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   الإنجازات
+========================= */
+
+.achievements {
+    max-width: 850px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.achievement {
+    display: flex;
+
+    align-items: center;
+
+    text-align: right;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #182631;
+
+    border-radius: 18px;
 
     transition: 0.3s;
 }
 
+.achievement:hover {
+    transform: translateX(-8px);
+}
 
-::selection {
+.achievement > span {
+    font-size: 38px;
+}
 
-    background: #00a8ff;
+.achievement h3 {
+    margin: 0 0 7px;
 
-    color: white;
+    font-size: 21px;
+}
+
+.achievement p {
+    margin: 0;
+
+    color: #bbbbbb;
+
+    font-size: 16px;
 }
 
 
 /* =========================
-   ☀️ الوضع الفاتح
+   قسم التواصل
+========================= */
+
+.contact-banner {
+    margin: 40px 8% 80px;
+
+    padding: 50px 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182631,
+            #101820
+        );
+
+    border: 1px solid rgba(0, 168, 255, 0.25);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.contact-banner h2 {
+    margin: 0 0 10px;
+
+    font-size: 30px;
+}
+
+.contact-banner p {
+    margin: 0;
+
+    color: #bbbbbb;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    padding: 35px 20px;
+
+    background: #0b1117;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    margin: 5px;
+
+    color: #888888;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   الوضع الفاتح ☀️
 ========================= */
 
 body.light-mode {
-
     background: #f4f7fb;
 
     color: #182631;
 }
 
 
-/* Navbar في الوضع الفاتح */
+/* Navbar */
 
 body.light-mode .navbar {
-
     background: rgba(255, 255, 255, 0.95);
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.15);
+        0 5px 20px rgba(0, 0, 0, 0.12);
 }
 
-
 body.light-mode .navbar h2 {
-
     color: #0077cc;
 }
 
-
-/* روابط Navbar */
-
 body.light-mode .nav-links a {
-
     color: #182631;
 }
 
-
-body.light-mode .nav-links a:hover {
-
-    color: #0077cc;
-}
-
-
+body.light-mode .nav-links a:hover,
 body.light-mode .nav-links a.active {
-
     color: #0077cc;
 }
-
-
-/* الخط تحت الروابط */
 
 body.light-mode .nav-links a::after {
-
     background: #0077cc;
 }
 
 
-/* Header */
+/* Hero */
 
-body.light-mode header {
-
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #eaf4ff
-    );
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.1);
+body.light-mode .hero {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 119, 204, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eaf4ff
+        );
 }
 
+body.light-mode .hero p {
+    color: #555555;
+}
 
-/* النصوص */
+body.light-mode .hero-card {
+    background: rgba(255, 255, 255, 0.9);
 
-body.light-mode p {
+    border-color: rgba(0, 119, 204, 0.2);
 
-    color: #444444;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 
 /* البطاقات */
 
-body.light-mode .card {
-
+body.light-mode .home-card,
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .achievement {
     background: white;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15);
+        0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .home-card p,
+body.light-mode .skill-card p,
+body.light-mode .project-card p,
+body.light-mode .achievement p {
+    color: #555555;
+}
+
+
+/* الإحصائيات */
+
+body.light-mode .stats-section {
+    background: #eaf4ff;
+}
+
+body.light-mode .stat {
+    background: white;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .stat span {
+    color: #555555;
+}
+
+
+/* التواصل */
+
+body.light-mode .contact-banner {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eaf4ff
+        );
+}
+
+
+/* Footer */
+
+body.light-mode footer {
+    background: #182631;
 }
 
 
 /* زر الوضع */
 
 body.light-mode .theme-button {
-
     background: #182631;
-
-    color: white;
-}
-
-
-body.light-mode .theme-button:hover {
-
-    background: #263b4a;
-}
-
-
-/* التحديد */
-
-body.light-mode ::selection {
-
-    background: #0077cc;
 
     color: white;
 }
@@ -459,10 +908,37 @@ body.light-mode ::selection {
    الهاتف 📱
 ========================= */
 
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+
+        gap: 50px;
+
+        padding: 70px 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .contact-banner {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
 @media (max-width: 700px) {
 
     .navbar {
-
         padding: 15px 20px;
 
         flex-direction: column;
@@ -470,60 +946,75 @@ body.light-mode ::selection {
         gap: 15px;
     }
 
-
     .nav-links {
-
-        gap: 15px;
+        gap: 14px;
 
         flex-wrap: wrap;
 
         justify-content: center;
     }
 
-
     .nav-links a {
-
-        font-size: 16px;
-    }
-
-
-    .theme-button {
-
         font-size: 15px;
-
-        padding: 7px 12px;
     }
 
+    .hero {
+        min-height: auto;
 
-    header {
-
-        padding: 50px 15px;
+        padding: 60px 20px;
     }
 
-
-    h1 {
-
-        font-size: 35px;
+    .hero h1 {
+        font-size: 38px;
     }
 
-
-    p {
-
+    .hero p {
         font-size: 18px;
     }
 
+    .hero-card {
+        width: 100%;
 
-    .container {
-
-        padding: 50px 15px;
+        max-width: 320px;
     }
 
+    .home-section {
+        padding: 60px 20px;
+    }
 
-    button,
-    .button {
+    .section-title h2 {
+        font-size: 28px;
+    }
 
-        font-size: 16px;
+    .skills-grid {
+        grid-template-columns:
+            1fr;
+    }
 
-        padding: 12px 22px;
+    .stats-section {
+        padding: 50px 20px;
+    }
+
+    .stat {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+    .achievement {
+        text-align: right;
+
+        align-items: flex-start;
+    }
+
+    .contact-banner {
+        margin: 20px 20px 60px;
+
+        padding: 40px 20px;
+    }
+
+    .contact-banner h2 {
+        font-size: 25px;
     }
 }
+
