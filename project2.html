@@ -1,262 +1,580 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة 3D | جواد</title>
 
-<title>مشروع اللعبة</title>
+    <link rel="stylesheet" href="style.css">
 
-<style>
+    <style>
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #101820;
-        color: white;
-        text-align: center;
-    }
+        /* =========================
+           رأس صفحة اللعبة
+        ========================== */
 
-    .container {
-        padding: 60px 20px;
-    }
+        .game-hero {
+            min-height: 500px;
 
-    h1 {
-        font-size: 45px;
-        color: #00aaff;
-        margin-bottom: 15px;
-    }
+            padding: 80px 20px;
 
-    .subtitle {
-        color: #bbbbbb;
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
+            display: flex;
+            flex-direction: column;
 
-    .game-card {
-        width: 80%;
-        max-width: 800px;
-        margin: auto;
-        padding: 35px;
-        background: #182631;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+            justify-content: center;
+            align-items: center;
 
-    .game-icon {
-        font-size: 90px;
-        margin-bottom: 10px;
-    }
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 168, 255, 0.18),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #182631
+                );
+        }
 
-    .game-card h2 {
-        color: #00aaff;
-        font-size: 30px;
-    }
+        .game-icon {
+            width: 130px;
+            height: 130px;
 
-    .game-card > p {
-        color: #dddddd;
-        font-size: 19px;
-        line-height: 1.9;
-    }
+            display: flex;
 
-    .section-title {
-        color: #00aaff;
-        font-size: 28px;
-        margin-top: 45px;
-        margin-bottom: 25px;
-    }
+            justify-content: center;
+            align-items: center;
 
-    .features {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+            border-radius: 35px;
 
-    .feature {
-        width: 180px;
-        padding: 20px;
-        background: #101820;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
+            background:
+                linear-gradient(
+                    135deg,
+                    #00a8ff,
+                    #006fa8
+                );
 
-    .feature:hover {
-        transform: translateY(-8px);
-    }
+            font-size: 65px;
 
-    .feature-icon {
-        font-size: 40px;
-    }
+            box-shadow:
+                0 20px 50px
+                rgba(0, 168, 255, 0.3);
 
-    .feature h3 {
-        color: #00aaff;
-    }
+            margin-bottom: 25px;
 
-    .feature p {
-        color: #dddddd;
-        font-size: 16px;
-        line-height: 1.6;
-    }
+            animation: floating 3s ease-in-out infinite;
+        }
 
-    .technology {
-        width: 200px;
-        padding: 20px;
-        background: #101820;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
+        @keyframes floating {
 
-    .technology:hover {
-        transform: translateY(-8px);
-    }
+            0% {
+                transform: translateY(0);
+            }
 
-    .technology h3 {
-        color: #00aaff;
-    }
+            50% {
+                transform: translateY(-10px);
+            }
 
-    .technology p {
-        color: #dddddd;
-        font-size: 16px;
-    }
+            100% {
+                transform: translateY(0);
+            }
 
-    .buttons {
-        margin-top: 45px;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+        }
 
-    .button {
-        display: inline-block;
-        padding: 14px 30px;
-        background: #00aaff;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
-    }
+        .game-hero h1 {
+            font-size: 52px;
 
-    .button:hover {
-        background: #0077cc;
-        transform: scale(1.05);
-    }
+            margin: 0 0 15px;
+        }
 
-</style>
-```
+        .game-hero h1 span {
+            color: #00a8ff;
+        }
+
+        .game-hero p {
+            max-width: 750px;
+
+            color: #cccccc;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           معلومات المشروع
+        ========================== */
+
+        .game-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 80px 20px;
+        }
+
+        .game-info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 70px;
+        }
+
+        .info-card {
+            padding: 25px;
+
+            background: #182631;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .info-card span {
+            display: block;
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .info-card h3 {
+            margin: 5px 0;
+
+            font-size: 20px;
+        }
+
+        .info-card p {
+            margin: 0;
+
+            color: #bbbbbb;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           عنوان القسم
+        ========================== */
+
+        .game-section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .game-section-title h2 {
+            font-size: 35px;
+
+            margin: 0 0 10px;
+        }
+
+        .game-section-title p {
+            color: #aaaaaa;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           المميزات
+        ========================== */
+
+        .features-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            padding: 30px 25px;
+
+            background: #182631;
+
+            border-radius: 20px;
+
+            border: 1px solid transparent;
+
+            transition: 0.35s;
+
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #00a8ff;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 168, 255, 0.12);
+        }
+
+        .feature-card .feature-icon {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+
+            margin: 10px 0;
+        }
+
+        .feature-card p {
+            color: #bbbbbb;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           التقنيات
+        ========================== */
+
+        .technologies {
+            padding: 45px 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #182631,
+                    #101820
+                );
+
+            border: 1px solid
+                rgba(0, 168, 255, 0.2);
+
+            margin-bottom: 60px;
+        }
+
+        .technology-list {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .technology {
+            padding: 12px 20px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(0, 168, 255, 0.1);
+
+            color: #00a8ff;
+
+            border: 1px solid
+                rgba(0, 168, 255, 0.2);
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           حالة المشروع
+        ========================== */
+
+        .game-status {
+            text-align: center;
+
+            padding: 35px;
+
+            background: #182631;
+
+            border-radius: 25px;
+
+            margin-bottom: 50px;
+        }
+
+        .status-badge {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(0, 168, 255, 0.12);
+
+            color: #00a8ff;
+
+            margin-bottom: 15px;
+        }
+
+        .game-status h2 {
+            margin: 5px 0 10px;
+
+            font-size: 28px;
+        }
+
+        .game-status p {
+            color: #bbbbbb;
+
+            margin: 0;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           الوضع الفاتح
+        ========================== */
+
+        body.light-mode .game-hero {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 119, 204, 0.12),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eaf4ff
+                );
+        }
+
+        body.light-mode .game-hero p {
+            color: #555555;
+        }
+
+        body.light-mode .info-card,
+        body.light-mode .feature-card,
+        body.light-mode .game-status {
+            background: white;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .info-card p,
+        body.light-mode .feature-card p,
+        body.light-mode .game-status p {
+            color: #555555;
+        }
+
+        body.light-mode .technologies {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eaf4ff
+                );
+        }
+
+
+        /* =========================
+           الهاتف
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .game-info {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .game-hero {
+                padding: 60px 20px;
+            }
+
+            .game-icon {
+                width: 110px;
+                height: 110px;
+
+                font-size: 55px;
+            }
+
+            .game-hero h1 {
+                font-size: 38px;
+            }
+
+            .game-hero p {
+                font-size: 18px;
+            }
+
+            .game-container {
+                padding: 60px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .technologies {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<div class="container">
 
-    <h1>🎮 مشروع اللعبة</h1>
+    <!-- =========================
+         شريط التنقل
+    ========================== -->
 
-    <p class="subtitle">
-        لعبة ثلاثية الأبعاد أعمل على تطويرها باستخدام Godot 🚀
-    </p>
+    <nav class="navbar">
+
+        <h2>جواد 🚀</h2>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="about.html">
+                عني
+            </a>
+
+            <a href="projects.html" class="active">
+                مشاريعي
+            </a>
+
+            <a href="contact.html">
+                تواصل معي
+            </a>
+
+            <button
+                id="theme-button"
+                class="theme-button">
+                ☀️
+            </button>
+
+        </div>
+
+    </nav>
 
 
-    <div class="game-card">
+    <!-- =========================
+         Hero
+    ========================== -->
 
-        <div class="game-icon">🎮</div>
+    <section class="game-hero">
 
-        <h2>مشروعي في Godot</h2>
+        <div class="game-icon">
+            🎮
+        </div>
+
+        <h1>
+            مشروع لعبة
+            <span>3D</span>
+        </h1>
 
         <p>
-            هذا مشروع لعبة ثلاثية الأبعاد أعمل على تطويرها
-            وإضافة العديد من الأنظمة والميزات إليها.
+            لعبة ثلاثية الأبعاد أقوم بتطويرها
+            باستخدام Godot 4 و GDScript،
+            وأضيف إليها أنظمة ومميزات جديدة باستمرار.
         </p>
 
+        <br>
 
-        <!-- مميزات اللعبة -->
+        <a href="#features" class="button">
+            🔥 اكتشف المميزات
+        </a>
 
-        <h2 class="section-title">
-            ⭐ مميزات اللعبة
-        </h2>
+    </section>
 
-        <div class="features">
 
-            <div class="feature">
+    <!-- =========================
+         معلومات المشروع
+    ========================== -->
 
-                <div class="feature-icon">🔫</div>
+    <main class="game-container">
 
-                <h3>الأسلحة</h3>
+
+        <div class="game-info">
+
+            <div class="info-card">
+
+                <span>🎮</span>
+
+                <h3>
+                    محرك اللعبة
+                </h3>
 
                 <p>
-                    أسلحة وأنظمة إطلاق مختلفة.
+                    Godot 4
                 </p>
 
             </div>
 
 
-            <div class="feature">
+            <div class="info-card">
 
-                <div class="feature-icon">👾</div>
+                <span>💻</span>
 
-                <h3>الأعداء</h3>
+                <h3>
+                    لغة البرمجة
+                </h3>
 
                 <p>
-                    أعداء يتحركون ويتفاعلون مع اللاعب.
+                    GDScript
                 </p>
 
             </div>
 
 
-            <div class="feature">
+            <div class="info-card">
 
-                <div class="feature-icon">👹</div>
+                <span>🌍</span>
 
-                <h3>Boss</h3>
-
-                <p>
-                    زعيم قوي يمثل تحديًا للاعب.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">❤️</div>
-
-                <h3>الصحة</h3>
+                <h3>
+                    نوع المشروع
+                </h3>
 
                 <p>
-                    نظام صحة وعناصر علاج.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">🏆</div>
-
-                <h3>النقاط</h3>
-
-                <p>
-                    نظام نقاط ومكافآت عند هزيمة الأعداء.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">🔑</div>
-
-                <h3>المفاتيح والأبواب</h3>
-
-                <p>
-                    جمع المفاتيح وفتح الأبواب المغلقة.
+                    لعبة ثلاثية الأبعاد
                 </p>
 
             </div>
@@ -264,87 +582,311 @@
         </div>
 
 
-        <!-- التقنيات المستخدمة -->
+        <!-- =========================
+             المميزات
+        ========================== -->
 
-        <h2 class="section-title">
-            💻 التقنيات المستخدمة
-        </h2>
+        <section id="features">
 
-        <div class="features">
+            <div class="game-section-title">
 
-            <div class="technology">
-
-                <div class="feature-icon">🎮</div>
-
-                <h3>Godot 4</h3>
+                <h2>
+                    ⚡ مميزات اللعبة
+                </h2>
 
                 <p>
-                    محرك تطوير اللعبة.
+                    بعض الأنظمة التي تم تطويرها داخل المشروع
                 </p>
 
             </div>
 
 
-            <div class="technology">
+            <div class="features-grid">
 
-                <div class="feature-icon">🧩</div>
 
-                <h3>GDScript</h3>
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔫
+                    </div>
+
+                    <h3>
+                        الأسلحة
+                    </h3>
+
+                    <p>
+                        نظام أسلحة مع إطلاق النار
+                        والذخيرة وإعادة التلقيم.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        👾
+                    </div>
+
+                    <h3>
+                        الأعداء
+                    </h3>
+
+                    <p>
+                        أعداء يتحركون ويتفاعلون
+                        مع اللاعب ويمكن القضاء عليهم.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        👹
+                    </div>
+
+                    <h3>
+                        Boss
+                    </h3>
+
+                    <p>
+                        Boss يمتلك صحة وهجمات
+                        عادية وهجمات خاصة.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        نظام الصحة
+                    </h3>
+
+                    <p>
+                        نظام صحة للاعب مع
+                        Health Bar وHealth Pack.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        النقاط
+                    </h3>
+
+                    <p>
+                        يحصل اللاعب على نقاط
+                        عند القضاء على الأعداء.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔑
+                    </div>
+
+                    <h3>
+                        المفاتيح والأبواب
+                    </h3>
+
+                    <p>
+                        نظام مفاتيح وأبواب لإضافة
+                        عنصر الاستكشاف والتحدي.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             التقنيات
+        ========================== -->
+
+        <section class="technologies">
+
+            <div class="game-section-title">
+
+                <h2>
+                    🛠️ التقنيات المستخدمة
+                </h2>
 
                 <p>
-                    لغة البرمجة المستخدمة في اللعبة.
+                    الأدوات التي أستخدمها في تطوير المشروع
                 </p>
 
             </div>
 
 
-            <div class="technology">
+            <div class="technology-list">
 
-                <div class="feature-icon">🌍</div>
+                <span class="technology">
+                    🎮 Godot 4
+                </span>
 
-                <h3>3D</h3>
+                <span class="technology">
+                    💻 GDScript
+                </span>
 
-                <p>
-                    عالم ثلاثي الأبعاد للعبة.
-                </p>
+                <span class="technology">
+                    🌍 3D
+                </span>
+
+                <span class="technology">
+                    🎨 3D Assets
+                </span>
+
+                <span class="technology">
+                    🔊 Audio
+                </span>
+
+                <span class="technology">
+                    ✨ Animation
+                </span>
 
             </div>
 
+        </section>
 
-            <div class="technology">
 
-                <div class="feature-icon">🎨</div>
+        <!-- =========================
+             حالة المشروع
+        ========================== -->
 
-                <h3>3D Assets</h3>
+        <section class="game-status">
 
-                <p>
-                    نماذج وعناصر ثلاثية الأبعاد.
-                </p>
+            <span class="status-badge">
+                🚧 قيد التطوير
+            </span>
 
-            </div>
+            <h2>
+                اللعبة لم تنتهِ بعد 🔥
+            </h2>
+
+            <p>
+                أواصل إضافة أنظمة ومميزات جديدة
+                وتحسين اللعبة خطوة بخطوة.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             أزرار التنقل
+        ========================== -->
+
+        <div>
+
+            <a href="projects.html" class="button">
+                ← العودة إلى المشاريع
+            </a>
+
+            <a href="index.html" class="button">
+                🏠 الرئيسية
+            </a>
 
         </div>
 
-    </div>
+
+    </main>
 
 
-    <!-- أزرار التنقل -->
+    <!-- =========================
+         Footer
+    ========================== -->
 
-    <div class="buttons">
+    <footer>
 
-        <a href="index.html" class="button">
-            🏠 الرئيسية
-        </a>
+        <p>
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
+        </p>
 
-        <a href="projects.html" class="button">
-            🚀 مشاريعي
-        </a>
+        <p>
+            تم التطوير باستخدام ❤️ و HTML و CSS
+        </p>
 
-    </div>
+    </footer>
 
-</div>
-```
+
+    <!-- =========================
+         الوضع الليلي / الفاتح
+    ========================== -->
+
+    <script>
+
+        const themeButton =
+            document.getElementById("theme-button");
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "light-mode"
+                );
+
+
+                if (
+                    document.body.classList.contains(
+                        "light-mode"
+                    )
+                ) {
+
+                    themeButton.textContent = "🌙";
+
+                    localStorage.setItem(
+                        "theme",
+                        "light"
+                    );
+
+                } else {
+
+                    themeButton.textContent = "☀️";
+
+                    localStorage.setItem(
+                        "theme",
+                        "dark"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
 </html>
+
