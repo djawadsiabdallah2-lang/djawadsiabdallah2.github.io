@@ -2,240 +2,359 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>عني</title>
+    <title>عني | جواد</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #101820;
-            color: white;
-            text-align: center;
-        }
-
         /* =========================
-           شريط التنقل
-        ========================= */
+           صفحة عني
+        ========================== */
 
-        .navbar {
-            background: rgba(27, 38, 59, 0.95);
-            padding: 18px 40px;
+        .about-hero {
+            padding: 80px 20px 60px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0, 168, 255, 0.15),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #101820,
+                    #182631
+                );
         }
 
-        .navbar h2 {
-            margin: 0;
-            color: #00a8ff;
-            font-size: 25px;
+        .about-hero h1 {
+            font-size: 48px;
+
+            margin: 0 0 15px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            position: relative;
-
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-
-            padding: 8px 4px;
-
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
+        .about-hero h1 span {
             color: #00a8ff;
         }
 
-        .nav-links a::after {
-            content: "";
+        .about-hero p {
+            max-width: 700px;
 
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            margin: auto;
 
-            width: 0;
-            height: 2px;
+            color: #cccccc;
 
-            background: #00a8ff;
-
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* الصفحة الحالية */
-
-        .nav-links a.active {
-            color: #00a8ff;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-
-        /* =========================
-           المحتوى
-        ========================= */
-
-        .container {
-            padding: 60px 20px;
-        }
-
-        h1 {
-            font-size: 42px;
-            color: #00aaff;
-        }
-
-
-        /* =========================
-           البطاقة
-        ========================= */
-
-        .card {
-            width: 80%;
-            max-width: 600px;
-
-            margin: 40px auto;
-
-            padding: 30px;
-
-            background: #182631;
-
-            border-radius: 20px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-        }
-
-        .icon {
-            font-size: 70px;
-        }
-
-        .card h2 {
-            color: #00aaff;
-        }
-
-        .card p {
-            font-size: 18px;
-            color: #dddddd;
             line-height: 1.8;
         }
 
 
         /* =========================
-           الزر
-        ========================= */
+           بطاقة التعريف
+        ========================== */
 
-        .button {
-            display: inline-block;
+        .about-container {
+            max-width: 1100px;
 
-            padding: 14px 30px;
+            margin: auto;
 
-            background: #00aaff;
+            padding: 70px 20px;
+        }
 
-            color: white;
+        .about-profile {
+            display: grid;
 
-            text-decoration: none;
+            grid-template-columns: 250px 1fr;
 
-            border-radius: 10px;
+            gap: 40px;
+
+            align-items: center;
+
+            padding: 40px;
+
+            background: #182631;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.3);
+
+            text-align: right;
+        }
+
+
+        .profile-icon {
+            width: 200px;
+            height: 200px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00a8ff,
+                    #006fa8
+                );
+
+            font-size: 80px;
+
+            box-shadow:
+                0 15px 35px rgba(0, 168, 255, 0.3);
+        }
+
+        .about-profile h2 {
+            font-size: 32px;
+
+            margin-top: 0;
+        }
+
+        .about-profile h2 span {
+            color: #00a8ff;
+        }
+
+        .about-profile p {
+            color: #cccccc;
 
             font-size: 18px;
 
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #0077cc;
-
-            transform: scale(1.05);
+            line-height: 1.9;
         }
 
 
         /* =========================
-           الهاتف 📱
-        ========================= */
+           بطاقات المعلومات
+        ========================== */
 
-        @media (max-width: 700px) {
+        .about-grid {
+            display: grid;
 
-            .navbar {
-                padding: 15px 20px;
+            grid-template-columns:
+                repeat(3, 1fr);
 
-                flex-direction: column;
+            gap: 25px;
 
-                gap: 15px;
+            margin-top: 50px;
+        }
+
+        .about-box {
+            padding: 30px 25px;
+
+            background: #182631;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
+
+            transition: 0.35s;
+
+            text-align: center;
+        }
+
+        .about-box:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 168, 255, 0.12);
+        }
+
+        .about-box .icon {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .about-box h3 {
+            font-size: 22px;
+        }
+
+        .about-box p {
+            color: #bbbbbb;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           الأهداف
+        ========================== */
+
+        .goals {
+            margin-top: 60px;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #182631,
+                    #101820
+                );
+
+            border-radius: 25px;
+
+            border: 1px solid rgba(0, 168, 255, 0.2);
+        }
+
+        .goals h2 {
+            font-size: 30px;
+
+            margin-top: 0;
+        }
+
+        .goal-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .goal {
+            padding: 20px;
+
+            background: rgba(0, 168, 255, 0.07);
+
+            border-radius: 15px;
+
+            text-align: right;
+
+            transition: 0.3s;
+        }
+
+        .goal:hover {
+            transform: translateX(-5px);
+
+            background: rgba(0, 168, 255, 0.12);
+        }
+
+        .goal span {
+            color: #00a8ff;
+
+            font-size: 20px;
+
+            margin-left: 8px;
+        }
+
+
+        /* =========================
+           الوضع الفاتح
+        ========================== */
+
+        body.light-mode .about-hero {
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(0, 119, 204, 0.12),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eaf4ff
+                );
+        }
+
+        body.light-mode .about-hero p {
+            color: #555555;
+        }
+
+        body.light-mode .about-profile,
+        body.light-mode .about-box {
+            background: white;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .about-profile p,
+        body.light-mode .about-box p {
+            color: #555555;
+        }
+
+        body.light-mode .goals {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eaf4ff
+                );
+        }
+
+
+        /* =========================
+           الهاتف
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .about-profile {
+                grid-template-columns: 1fr;
+
+                text-align: center;
             }
 
-            .nav-links {
-                gap: 15px;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            .nav-links a {
-                font-size: 16px;
+            .goal-list {
+                grid-template-columns: 1fr;
             }
 
-            .container {
-                padding: 45px 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            .about-hero h1 {
+                font-size: 36px;
             }
 
-            h1 {
-                font-size: 35px;
+            .about-profile {
+                padding: 30px 20px;
             }
 
-            .card {
-                width: 100%;
-                padding: 25px;
+            .profile-icon {
+                width: 150px;
+                height: 150px;
+
+                font-size: 60px;
+            }
+
+            .goals {
+                padding: 30px 20px;
             }
 
         }
 
     </style>
-
 </head>
 
 
 <body>
 
-
     <!-- =========================
          شريط التنقل
-    ========================= -->
+    ========================== -->
 
     <nav class="navbar">
 
-        <h2>موقعي 🚀</h2>
+        <h2>جواد 🚀</h2>
 
         <div class="nav-links">
 
@@ -255,48 +374,274 @@
                 تواصل معي
             </a>
 
+            <button
+                id="theme-button"
+                class="theme-button">
+                ☀️
+            </button>
+
         </div>
 
     </nav>
 
 
     <!-- =========================
+         المقدمة
+    ========================== -->
+
+    <section class="about-hero">
+
+        <h1>
+            👋 مرحباً، أنا
+            <span>جواد</span>
+        </h1>
+
+        <p>
+            أحب تعلم البرمجة وبناء المشاريع
+            وتجربة أفكار جديدة وتحويلها إلى
+            أشياء حقيقية.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
          المحتوى
-    ========================= -->
+    ========================== -->
 
-    <div class="container">
+    <main class="about-container">
 
-        <h1>👋 عني</h1>
 
-        <div class="card">
+        <!-- بطاقة التعريف -->
 
-            <div class="icon">
-                🚀
+        <div class="about-profile">
+
+            <div class="profile-icon">
+                👨‍💻
             </div>
 
-            <h2>
-                مرحباً!
-            </h2>
+            <div>
 
-            <p>
-                أنا أتعلم HTML و CSS وأقوم ببناء
-                موقعي الأول باستخدام GitHub Pages.
-            </p>
+                <h2>
+                    من هو <span>جواد</span>؟
+                </h2>
 
-            <p>
-                هذه مجرد البداية، وسأستمر في تطوير
-                موقعي وإضافة المزيد من الصفحات والمشاريع. 🔥
-            </p>
+                <p>
+                    أنا أتعلم تطوير المواقع والألعاب،
+                    وأعمل على تطوير مهاراتي في
+                    البرمجة والتصميم خطوة بخطوة.
+                </p>
+
+                <p>
+                    أحب تجربة التقنيات الجديدة،
+                    وبناء مشاريع خاصة بي،
+                    وتحويل الأفكار إلى مشاريع
+                    يمكن للآخرين تجربتها.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <a href="index.html" class="button">
-            ⬅️ العودة إلى الرئيسية
+        <!-- معلومات -->
+
+        <div class="about-grid">
+
+
+            <div class="about-box">
+
+                <div class="icon">
+                    💻
+                </div>
+
+                <h3>
+                    البرمجة
+                </h3>
+
+                <p>
+                    أتعلم كتابة الأكواد وفهم
+                    كيفية بناء المشاريع من الصفر.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="icon">
+                    🎮
+                </div>
+
+                <h3>
+                    تطوير الألعاب
+                </h3>
+
+                <p>
+                    أعمل على ألعاب ثلاثية الأبعاد
+                    باستخدام Godot 4.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="icon">
+                    🚀
+                </div>
+
+                <h3>
+                    التطور
+                </h3>
+
+                <p>
+                    أتعلم باستمرار وأحاول جعل
+                    كل مشروع أفضل من السابق.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- الأهداف -->
+
+        <div class="goals">
+
+            <h2>
+                🎯 أهدافي
+            </h2>
+
+            <div class="goal-list">
+
+                <div class="goal">
+
+                    <span>✓</span>
+
+                    تطوير مهاراتي في البرمجة.
+
+                </div>
+
+
+                <div class="goal">
+
+                    <span>✓</span>
+
+                    بناء ألعاب ومشاريع خاصة بي.
+
+                </div>
+
+
+                <div class="goal">
+
+                    <span>✓</span>
+
+                    تعلم تقنيات جديدة.
+
+                </div>
+
+
+                <div class="goal">
+
+                    <span>✓</span>
+
+                    تطوير موقعي باستمرار.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <br><br>
+
+
+        <a href="projects.html" class="button">
+            🚀 شاهد مشاريعي
         </a>
 
-    </div>
+    </main>
 
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
+        </p>
+
+        <p>
+            تم التطوير باستخدام ❤️ و HTML و CSS
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         الوضع الليلي / الفاتح
+    ========================== -->
+
+    <script>
+
+        const themeButton =
+            document.getElementById("theme-button");
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "light-mode"
+                );
+
+
+                if (
+                    document.body.classList.contains(
+                        "light-mode"
+                    )
+                ) {
+
+                    themeButton.textContent = "🌙";
+
+                    localStorage.setItem(
+                        "theme",
+                        "light"
+                    );
+
+                } else {
+
+                    themeButton.textContent = "☀️";
+
+                    localStorage.setItem(
+                        "theme",
+                        "dark"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
