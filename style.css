@@ -272,3 +272,16 @@ a {
     }
 }
 
+
+/* =========================
+   الصفحة الحالية في Navbar
+========================= */
+
+.nav-links a.active {
+    color: #00a8ff;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
