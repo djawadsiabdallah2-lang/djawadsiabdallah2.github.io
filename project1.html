@@ -1,105 +1,382 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروعي الأول | جواد</title>
 
-<title>مشروعي الأول</title>
+    <link rel="stylesheet" href="style.css">
 
-<style>
+    <style>
+        .project-hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #101820;
-        color: white;
-        text-align: center;
-    }
+        .project-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+            animation: floating 3s ease-in-out infinite;
+        }
 
-    .container {
-        padding-top: 80px;
-    }
+        .project-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
 
-    h1 {
-        font-size: 42px;
-        color: #00aaff;
-    }
+        .project-hero h1 span {
+            color: #00d9ff;
+        }
 
-    .card {
-        width: 80%;
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 35px;
-        background: #182631;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+        .project-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #b8c4d0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
 
-    .icon {
-        font-size: 80px;
-    }
+        .project-container {
+            max-width: 900px;
+            margin: 30px auto 80px;
+            padding: 0 20px;
+        }
 
-    p {
-        color: #dddddd;
-        font-size: 19px;
-        line-height: 1.8;
-    }
+        .project-card {
+            background: #18232e;
+            border: 1px solid #263746;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
 
-    .button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 14px 30px;
-        background: #00aaff;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
-    }
+        .project-card h2 {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
 
-    .button:hover {
-        background: #0077cc;
-        transform: scale(1.05);
-    }
+        .project-card h2 span {
+            color: #00d9ff;
+        }
 
-</style>
-```
+        .project-card p {
+            color: #b8c4d0;
+            line-height: 1.9;
+            font-size: 17px;
+        }
 
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: #101820;
+            border: 1px solid #263746;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin: 5px 0;
+        }
+
+        .feature p {
+            font-size: 14px;
+            margin: 0;
+            color: #9eacb8;
+        }
+
+        .project-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .project-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #00d9ff;
+            color: #101820;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .project-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.25);
+        }
+
+        .project-button.secondary {
+            background: transparent;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+        }
+
+        body.light-mode .project-hero p {
+            color: #555;
+        }
+
+        body.light-mode .project-card {
+            background: white;
+            border-color: #ddd;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        body.light-mode .project-card p {
+            color: #666;
+        }
+
+        body.light-mode .feature {
+            background: #f5f7fa;
+            border-color: #ddd;
+        }
+
+        body.light-mode .feature p {
+            color: #666;
+        }
+
+        body.light-mode .project-button.secondary {
+            color: #008eaa;
+            border-color: #008eaa;
+        }
+
+        @media (max-width: 700px) {
+
+            .project-hero h1 {
+                font-size: 32px;
+            }
+
+            .project-features {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 25px 20px;
+            }
+
+            .project-buttons {
+                flex-direction: column;
+            }
+
+            .project-button {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<div class="container">
+    <!-- شريط التنقل -->
+    <nav class="navbar">
 
-    <h1>🌐 مشروعي الأول</h1>
+        <div class="logo">
+            جواد 🚀
+        </div>
 
-    <div class="card">
+        <div class="nav-links">
 
-        <div class="icon">🚀</div>
+            <a href="index.html">الرئيسية</a>
+
+            <a href="about.html">عني</a>
+
+            <a href="projects.html" class="active">مشاريعي</a>
+
+            <a href="contact.html">تواصل معي</a>
+
+            <button id="theme-button" class="theme-button">
+                ☀️
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- مقدمة المشروع -->
+    <section class="project-hero">
+
+        <div class="project-icon">
+            🌐
+        </div>
+
+        <h1>
+            <span>مشروعي</span> الأول
+        </h1>
 
         <p>
-            هذا هو أول موقع أقوم بإنشائه باستخدام
-            HTML و CSS و GitHub Pages.
+            هذا هو أول موقع قمت بإنشائه أثناء تعلمي
+            HTML و CSS، ومن خلاله بدأت رحلتي في تطوير المواقع.
+        </p>
+
+    </section>
+
+
+    <!-- تفاصيل المشروع -->
+    <main class="project-container">
+
+        <div class="project-card">
+
+            <h2>
+                🚀 بداية <span>رحلتي</span>
+            </h2>
+
+            <p>
+                هذا المشروع يمثل بدايتي في عالم تطوير الويب.
+                تعلمت من خلاله كيفية إنشاء صفحات HTML،
+                وتنسيقها باستخدام CSS، وربط الصفحات ببعضها.
+            </p>
+
+            <p>
+                ومع مرور الوقت بدأت أضيف المزيد من الأفكار
+                والتصميمات والتفاعلات حتى أصبح هذا الموقع
+                أفضل وأكثر احترافية.
+            </p>
+
+
+            <!-- مميزات المشروع -->
+            <div class="project-features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🧱
+                    </div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        بناء صفحات الموقع
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎨
+                    </div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        تصميم وتنسيق الموقع
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🚀
+                    </div>
+
+                    <h3>تطوير</h3>
+
+                    <p>
+                        تحسين المشروع باستمرار
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- الأزرار -->
+            <div class="project-buttons">
+
+                <a href="projects.html" class="project-button secondary">
+                    ← العودة للمشاريع
+                </a>
+
+                <a href="index.html" class="project-button">
+                    🏠 الرئيسية
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- التذييل -->
+    <footer>
+
+        <p>
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
         </p>
 
         <p>
-            وما زلت أتعلم وأضيف إليه أشياء جديدة! 🔥
+            تم التطوير باستخدام ❤️ و HTML و CSS
         </p>
 
-        <a href="projects.html" class="button">
-            ⬅️ العودة إلى مشاريعي
-        </a>
+    </footer>
 
-    </div>
 
-</div>
-```
+    <!-- الوضع الليلي / الفاتح -->
+    <script>
+
+        const themeButton = document.getElementById("theme-button");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
+
