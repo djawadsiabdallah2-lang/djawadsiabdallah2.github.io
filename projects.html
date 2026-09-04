@@ -4,169 +4,422 @@
 
 <head>
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>مشاريعي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>مشاريعي</title>
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #101820;
-        color: white;
-        text-align: center;
-    }
 
-    .container {
-        padding: 60px 20px;
-    }
+    <style>
 
-    h1 {
-        font-size: 42px;
-        color: #00aaff;
-        margin-bottom: 50px;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101820;
+            color: white;
+            text-align: center;
+        }
 
-    .projects {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        flex-wrap: wrap;
-    }
 
-    .project-link {
-        color: inherit;
-        text-decoration: none;
-    }
+        /* =========================
+           شريط التنقل
+        ========================= */
 
-    .card {
-        width: 280px;
-        padding: 25px;
-        background: #182631;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        transition: 0.3s;
-    }
+        .navbar {
+            background: rgba(27, 38, 59, 0.95);
 
-    .card:hover {
-        transform: translateY(-10px) scale(1.03);
-    }
+            padding: 18px 40px;
 
-    .icon {
-        font-size: 60px;
-    }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-    .card h2 {
-        color: #00aaff;
-    }
+            position: sticky;
+            top: 0;
 
-    .card p {
-        color: #dddddd;
-        line-height: 1.7;
-    }
+            z-index: 1000;
 
-    .button {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 14px 30px;
-        background: #00aaff;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
-    }
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
 
-    .button:hover {
-        background: #0077cc;
-        transform: scale(1.05);
-    }
 
-</style>
-```
+        .navbar h2 {
+            margin: 0;
+
+            color: #00a8ff;
+
+            font-size: 25px;
+        }
+
+
+        .nav-links {
+            display: flex;
+
+            gap: 25px;
+
+            align-items: center;
+        }
+
+
+        .nav-links a {
+            position: relative;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            padding: 8px 4px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: #00a8ff;
+        }
+
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: 0;
+            right: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: #00a8ff;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* الصفحة الحالية */
+
+        .nav-links a.active {
+            color: #00a8ff;
+        }
+
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           المحتوى
+        ========================= */
+
+        .container {
+            padding: 60px 20px;
+        }
+
+
+        h1 {
+            font-size: 42px;
+
+            color: #00aaff;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           المشاريع
+        ========================= */
+
+        .projects {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .project-link {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        .card {
+            width: 280px;
+
+            padding: 25px;
+
+            background: #182631;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+
+        .icon {
+            font-size: 60px;
+        }
+
+
+        .card h2 {
+            color: #00aaff;
+        }
+
+
+        .card p {
+            color: #dddddd;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           الزر
+        ========================= */
+
+        .button {
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 14px 30px;
+
+            background: #00aaff;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+            background: #0077cc;
+
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           الهاتف 📱
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            .nav-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+
+            .container {
+                padding: 45px 15px;
+            }
+
+
+            h1 {
+                font-size: 35px;
+            }
+
+
+            .card {
+                width: 100%;
+
+                max-width: 320px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-```
-<div class="nav-links">
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">عني</a>
-    <a href="projects.html" class="active">مشاريعي</a>
-    <a href="contact.html">تواصل معي</a>
-</div>
-        <!-- المشروع الأول -->
 
-        <a href="project1.html" class="project-link">
+    <!-- =========================
+         شريط التنقل
+    ========================= -->
 
-            <div class="card">
+    <nav class="navbar">
 
-                <div class="icon">🌐</div>
+        <h2>موقعي 🚀</h2>
 
-                <h2>موقعي الأول</h2>
 
-                <p>
-                    أول موقع أقوم بإنشائه باستخدام
-                    HTML و CSS و GitHub Pages.
-                </p>
+        <div class="nav-links">
 
-            </div>
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+
+            <a href="about.html">
+                عني
+            </a>
+
+
+            <a href="projects.html" class="active">
+                مشاريعي
+            </a>
+
+
+            <a href="contact.html">
+                تواصل معي
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         المحتوى
+    ========================= -->
+
+    <div class="container">
+
+
+        <h1>
+            🚀 مشاريعي
+        </h1>
+
+
+        <div class="projects">
+
+
+            <!-- المشروع الأول -->
+
+            <a href="project1.html" class="project-link">
+
+                <div class="card">
+
+                    <div class="icon">
+                        🌐
+                    </div>
+
+
+                    <h2>
+                        موقعي الأول
+                    </h2>
+
+
+                    <p>
+                        أول موقع أقوم بإنشائه باستخدام
+                        HTML و CSS و GitHub Pages.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- المشروع الثاني -->
+
+            <a href="project2.html" class="project-link">
+
+                <div class="card">
+
+                    <div class="icon">
+                        🎮
+                    </div>
+
+
+                    <h2>
+                        مشروع لعبة
+                    </h2>
+
+
+                    <p>
+                        مشروع لعبة أعمل عليه وأطوره
+                        وأضيف إليه العديد من الأفكار.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- المشروع الثالث -->
+
+            <a href="project3.html" class="project-link">
+
+                <div class="card">
+
+                    <div class="icon">
+                        💡
+                    </div>
+
+
+                    <h2>
+                        مشروع قادم
+                    </h2>
+
+
+                    <p>
+                        هنا سأضع أحد مشاريعي القادمة
+                        عندما أنتهي منه.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+        <a href="index.html" class="button">
+
+            ⬅️ العودة إلى الرئيسية
 
         </a>
 
-
-        <!-- المشروع الثاني -->
-
-        <a href="project2.html" class="project-link">
-
-            <div class="card">
-
-                <div class="icon">🎮</div>
-
-                <h2>مشروع لعبة</h2>
-
-                <p>
-                    مشروع لعبة أعمل عليه وأطوره
-                    وأضيف إليه العديد من الأفكار.
-                </p>
-
-            </div>
-
-        </a>
-
-
-        <!-- المشروع الثالث -->
-
-        <a href="project3.html" class="project-link">
-
-            <div class="card">
-
-                <div class="icon">💡</div>
-
-                <h2>مشروع قادم</h2>
-
-                <p>
-                    هنا سأضع أحد مشاريعي القادمة
-                    عندما أنتهي منه.
-                </p>
-
-            </div>
-
-        </a>
 
     </div>
 
-
-    <a href="index.html" class="button">
-        ⬅️ العودة إلى الرئيسية
-    </a>
-
-</div>
-```
 
 </body>
 
