@@ -19,6 +19,87 @@
             text-align: center;
         }
 
+        /* =========================
+           شريط التنقل
+        ========================= */
+
+        .navbar {
+            background: rgba(27, 38, 59, 0.95);
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar h2 {
+            margin: 0;
+            color: #00a8ff;
+            font-size: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+
+            padding: 8px 4px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00a8ff;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: #00a8ff;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* الصفحة الحالية */
+
+        .nav-links a.active {
+            color: #00a8ff;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           المحتوى
+        ========================= */
+
         .container {
             padding: 60px 20px;
         }
@@ -35,16 +116,31 @@
             margin-bottom: 40px;
         }
 
+
+        /* =========================
+           بطاقة التواصل
+        ========================= */
+
         .contact-card {
             width: 90%;
             max-width: 650px;
             margin: auto;
+
             padding: 35px;
+
             background: #182631;
+
             border-radius: 20px;
+
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
             box-sizing: border-box;
         }
+
+
+        /* =========================
+           الحقول
+        ========================= */
 
         .form-group {
             margin-bottom: 25px;
@@ -53,21 +149,32 @@
 
         label {
             display: block;
+
             margin-bottom: 8px;
+
             color: #00aaff;
+
             font-size: 18px;
         }
 
         input,
         textarea {
             width: 100%;
+
             padding: 14px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #101820;
+
             color: white;
+
             font-size: 16px;
+
             box-sizing: border-box;
+
             outline: none;
         }
 
@@ -81,45 +188,151 @@
             min-height: 150px;
         }
 
+
+        /* =========================
+           الأزرار
+        ========================= */
+
         .button {
             display: inline-block;
+
             margin-top: 10px;
+
             padding: 14px 30px;
+
             background: #00aaff;
+
             color: white;
+
             border: none;
+
             text-decoration: none;
+
             border-radius: 10px;
+
             font-size: 18px;
+
             cursor: pointer;
+
             transition: 0.3s;
         }
 
         .button:hover {
             background: #0077cc;
+
             transform: scale(1.05);
         }
 
         .buttons {
             margin-top: 40px;
+
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
 
+
+        /* =========================
+           جاري الإرسال
+        ========================= */
+
         .loading {
             display: none;
+
             margin-top: 15px;
+
             color: #00aaff;
+
             font-size: 17px;
+        }
+
+
+        /* =========================
+           الهاتف 📱
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+
+            .contact-card {
+                width: 100%;
+            }
+
+            .container {
+                padding: 45px 15px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
+
+
+    <!-- =========================
+         شريط التنقل
+    ========================= -->
+
+    <nav class="navbar">
+
+        <h2>موقعي 🚀</h2>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="about.html">
+                عني
+            </a>
+
+            <a href="projects.html">
+                مشاريعي
+            </a>
+
+            <a href="contact.html" class="active">
+                تواصل معي
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         المحتوى
+    ========================= -->
 
     <div class="container">
 
@@ -129,9 +342,18 @@
             يمكنك إرسال رسالة لي من خلال النموذج التالي 🚀
         </p>
 
+
+        <!-- بطاقة التواصل -->
+
         <div class="contact-card">
 
+
+            <!-- نموذج التواصل -->
+
             <form id="contact-form">
+
+
+                <!-- الاسم -->
 
                 <div class="form-group">
 
@@ -150,6 +372,8 @@
                 </div>
 
 
+                <!-- البريد -->
+
                 <div class="form-group">
 
                     <label for="email">
@@ -167,6 +391,8 @@
                 </div>
 
 
+                <!-- الرسالة -->
+
                 <div class="form-group">
 
                     <label for="message">
@@ -183,6 +409,8 @@
                 </div>
 
 
+                <!-- زر الإرسال -->
+
                 <button
                     type="submit"
                     class="button"
@@ -190,14 +418,22 @@
                     📤 إرسال الرسالة
                 </button>
 
+
+                <!-- حالة الإرسال -->
+
                 <div id="loading" class="loading">
                     ⏳ جاري إرسال الرسالة...
                 </div>
+
 
             </form>
 
         </div>
 
+
+        <!-- =========================
+             أزرار التنقل
+        ========================= -->
 
         <div class="buttons">
 
@@ -211,21 +447,31 @@
 
         </div>
 
+
     </div>
 
+
+    <!-- =========================
+         JavaScript
+    ========================= -->
 
     <script>
 
         const form = document.getElementById("contact-form");
+
         const loading = document.getElementById("loading");
+
 
         form.addEventListener("submit", async function(event) {
 
             event.preventDefault();
 
+
             loading.style.display = "block";
 
+
             const formData = new FormData(form);
+
 
             try {
 
@@ -233,18 +479,23 @@
                     "https://formspree.io/f/xdeodwnq",
                     {
                         method: "POST",
+
                         body: formData,
+
                         headers: {
                             "Accept": "application/json"
                         }
                     }
                 );
 
+
                 if (response.ok) {
 
                     window.location.href = "success.html";
 
-                } else {
+                }
+
+                else {
 
                     loading.style.display = "none";
 
@@ -252,7 +503,10 @@
 
                 }
 
-            } catch (error) {
+
+            }
+
+            catch (error) {
 
                 loading.style.display = "none";
 
@@ -263,6 +517,7 @@
         });
 
     </script>
+
 
 </body>
 
