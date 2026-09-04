@@ -1,365 +1,208 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>تواصل معي</title>
+    <title>تواصل معي | جواد</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <style>
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #101820;
-            color: white;
+        .contact-hero {
             text-align: center;
+            padding: 80px 20px 40px;
         }
 
-        /* =========================
-           شريط التنقل
-        ========================= */
-
-        .navbar {
-            background: rgba(27, 38, 59, 0.95);
-            padding: 18px 40px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        .contact-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
         }
 
-        .navbar h2 {
-            margin: 0;
-            color: #00a8ff;
-            font-size: 25px;
+        .contact-hero h1 span {
+            color: #00d9ff;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            position: relative;
-
-            color: white;
-            text-decoration: none;
+        .contact-hero p {
+            color: #b8c4d0;
             font-size: 18px;
-
-            padding: 8px 4px;
-
-            transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #00a8ff;
+        .contact-container {
+            max-width: 800px;
+            margin: 20px auto 80px;
+            padding: 0 20px;
         }
-
-        .nav-links a::after {
-            content: "";
-
-            position: absolute;
-            bottom: 0;
-            right: 0;
-
-            width: 0;
-            height: 2px;
-
-            background: #00a8ff;
-
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* الصفحة الحالية */
-
-        .nav-links a.active {
-            color: #00a8ff;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-
-        /* =========================
-           المحتوى
-        ========================= */
-
-        .container {
-            padding: 60px 20px;
-        }
-
-        h1 {
-            font-size: 45px;
-            color: #00aaff;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #bbbbbb;
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-
-        /* =========================
-           بطاقة التواصل
-        ========================= */
 
         .contact-card {
-            width: 90%;
-            max-width: 650px;
-            margin: auto;
-
-            padding: 35px;
-
-            background: #182631;
-
+            background: #18232e;
+            border: 1px solid #263746;
             border-radius: 20px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-
-            box-sizing: border-box;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
+        .contact-card h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
 
-        /* =========================
-           الحقول
-        ========================= */
+        .contact-card h2 span {
+            color: #00d9ff;
+        }
+
+        .contact-card p {
+            color: #aebbc7;
+            margin-bottom: 30px;
+        }
 
         .form-group {
-            margin-bottom: 25px;
-            text-align: right;
+            margin-bottom: 20px;
         }
 
-        label {
+        .form-group label {
             display: block;
-
             margin-bottom: 8px;
-
-            color: #00aaff;
-
-            font-size: 18px;
+            font-weight: bold;
         }
 
-        input,
-        textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-
-            padding: 14px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            background: #101820;
-
-            color: white;
-
-            font-size: 16px;
-
             box-sizing: border-box;
-
-            outline: none;
-        }
-
-        input:focus,
-        textarea:focus {
-            box-shadow: 0 0 0 2px #00aaff;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-
-        /* =========================
-           الأزرار
-        ========================= */
-
-        .button {
-            display: inline-block;
-
-            margin-top: 10px;
-
-            padding: 14px 30px;
-
-            background: #00aaff;
-
-            color: white;
-
-            border: none;
-
-            text-decoration: none;
-
+            padding: 14px;
+            border: 1px solid #34495e;
             border-radius: 10px;
+            background: #101820;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+        }
 
-            font-size: 18px;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #00d9ff;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.15);
+        }
 
+        .form-group textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #00d9ff;
+            color: #101820;
+            font-size: 17px;
+            font-weight: bold;
             cursor: pointer;
-
             transition: 0.3s;
         }
 
-        .button:hover {
-            background: #0077cc;
-
-            transform: scale(1.05);
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.25);
         }
 
-        .buttons {
-            margin-top: 40px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-        }
-
-
-        /* =========================
-           جاري الإرسال
-        ========================= */
-
-        .loading {
+        #loading {
             display: none;
-
-            margin-top: 15px;
-
-            color: #00aaff;
-
-            font-size: 17px;
+            text-align: center;
+            margin-top: 20px;
+            color: #00d9ff;
+            font-weight: bold;
         }
 
-
-        /* =========================
-           الهاتف 📱
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .navbar {
-                padding: 15px 20px;
-
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 15px;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-            }
-
-            .nav-links a {
-                font-size: 16px;
-            }
-
-            h1 {
-                font-size: 35px;
-            }
-
-            .contact-card {
-                width: 100%;
-            }
-
-            .container {
-                padding: 45px 15px;
-            }
-
+        /* الوضع الفاتح */
+        body.light-mode .contact-hero p {
+            color: #555;
         }
 
+        body.light-mode .contact-card {
+            background: white;
+            border-color: #ddd;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body.light-mode .contact-card p {
+            color: #666;
+        }
+
+        body.light-mode .form-group input,
+        body.light-mode .form-group textarea {
+            background: #f5f7fa;
+            color: #222;
+            border-color: #ccc;
+        }
+
+        body.light-mode .form-group input:focus,
+        body.light-mode .form-group textarea:focus {
+            border-color: #00a8c6;
+        }
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         شريط التنقل
-    ========================= -->
-
+    <!-- شريط التنقل -->
     <nav class="navbar">
 
-        <h2>موقعي 🚀</h2>
+        <div class="logo">
+            جواد 🚀
+        </div>
 
         <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">عني</a>
+            <a href="projects.html">مشاريعي</a>
+            <a href="contact.html" class="active">تواصل معي</a>
 
-            <a href="index.html">
-                الرئيسية
-            </a>
-
-            <a href="about.html">
-                عني
-            </a>
-
-            <a href="projects.html">
-                مشاريعي
-            </a>
-
-            <a href="contact.html" class="active">
-                تواصل معي
-            </a>
-
+            <button id="theme-button" class="theme-button">
+                ☀️
+            </button>
         </div>
 
     </nav>
 
 
-    <!-- =========================
-         المحتوى
-    ========================= -->
+    <!-- مقدمة الصفحة -->
+    <section class="contact-hero">
 
-    <div class="container">
+        <h1>
+            📩 تواصل <span>معي</span>
+        </h1>
 
-        <h1>📩 تواصل معي</h1>
-
-        <p class="subtitle">
-            يمكنك إرسال رسالة لي من خلال النموذج التالي 🚀
+        <p>
+            لديك فكرة أو تريد التواصل معي؟ أرسل لي رسالة 👇
         </p>
 
+    </section>
 
-        <!-- بطاقة التواصل -->
+
+    <!-- نموذج التواصل -->
+    <main class="contact-container">
 
         <div class="contact-card">
 
+            <h2>
+                💬 أرسل <span>رسالة</span>
+            </h2>
 
-            <!-- نموذج التواصل -->
+            <p>
+                املأ المعلومات التالية وسأحصل على رسالتك.
+            </p>
+
 
             <form id="contact-form">
 
-
-                <!-- الاسم -->
-
                 <div class="form-group">
-
-                    <label for="name">
-                        الاسم
-                    </label>
+                    <label for="name">👤 الاسم</label>
 
                     <input
                         type="text"
@@ -368,17 +211,11 @@
                         placeholder="اكتب اسمك"
                         required
                     >
-
                 </div>
 
 
-                <!-- البريد -->
-
                 <div class="form-group">
-
-                    <label for="email">
-                        البريد الإلكتروني
-                    </label>
+                    <label for="email">📧 البريد الإلكتروني</label>
 
                     <input
                         type="email"
@@ -387,17 +224,11 @@
                         placeholder="example@email.com"
                         required
                     >
-
                 </div>
 
 
-                <!-- الرسالة -->
-
                 <div class="form-group">
-
-                    <label for="message">
-                        الرسالة
-                    </label>
+                    <label for="message">✏️ الرسالة</label>
 
                     <textarea
                         id="message"
@@ -405,69 +236,96 @@
                         placeholder="اكتب رسالتك هنا..."
                         required
                     ></textarea>
-
                 </div>
 
-
-                <!-- زر الإرسال -->
 
                 <button
                     type="submit"
-                    class="button"
+                    class="send-button"
+                    id="send-button"
                 >
-                    📤 إرسال الرسالة
+                    🚀 إرسال الرسالة
                 </button>
-
-
-                <!-- حالة الإرسال -->
-
-                <div id="loading" class="loading">
-                    ⏳ جاري إرسال الرسالة...
-                </div>
-
 
             </form>
 
-        </div>
 
-
-        <!-- =========================
-             أزرار التنقل
-        ========================= -->
-
-        <div class="buttons">
-
-            <a href="index.html" class="button">
-                🏠 الرئيسية
-            </a>
-
-            <a href="projects.html" class="button">
-                🚀 مشاريعي
-            </a>
+            <div id="loading">
+                ⏳ جارٍ إرسال الرسالة...
+            </div>
 
         </div>
 
+    </main>
 
-    </div>
 
+    <!-- التذييل -->
+    <footer>
 
-    <!-- =========================
-         JavaScript
-    ========================= -->
+        <p>
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
+        </p>
+
+        <p>
+            تم التطوير باستخدام ❤️ و HTML و CSS
+        </p>
+
+    </footer>
+
 
     <script>
 
+        /* =========================
+           الوضع الليلي / الفاتح
+        ========================= */
+
+        const themeButton = document.getElementById("theme-button");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeButton.textContent = "🌙";
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "☀️";
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+
+        /* =========================
+           إرسال النموذج
+        ========================= */
+
         const form = document.getElementById("contact-form");
-
         const loading = document.getElementById("loading");
+        const sendButton = document.getElementById("send-button");
 
 
-        form.addEventListener("submit", async function(event) {
+        form.addEventListener("submit", async function (event) {
 
             event.preventDefault();
 
-
             loading.style.display = "block";
+            sendButton.disabled = true;
+            sendButton.textContent = "⏳ جارٍ الإرسال...";
 
 
             const formData = new FormData(form);
@@ -479,9 +337,7 @@
                     "https://formspree.io/f/xdeodwnq",
                     {
                         method: "POST",
-
                         body: formData,
-
                         headers: {
                             "Accept": "application/json"
                         }
@@ -493,22 +349,21 @@
 
                     window.location.href = "success.html";
 
-                }
-
-                else {
+                } else {
 
                     loading.style.display = "none";
+                    sendButton.disabled = false;
+                    sendButton.textContent = "🚀 إرسال الرسالة";
 
                     alert("❌ حدث خطأ أثناء إرسال الرسالة.");
 
                 }
 
-
-            }
-
-            catch (error) {
+            } catch (error) {
 
                 loading.style.display = "none";
+                sendButton.disabled = false;
+                sendButton.textContent = "🚀 إرسال الرسالة";
 
                 alert("❌ تعذر إرسال الرسالة. تحقق من اتصال الإنترنت.");
 
@@ -517,7 +372,6 @@
         });
 
     </script>
-
 
 </body>
 
