@@ -1,111 +1,274 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>صفحتي الثانية</title>
+    <title>الصفحة الثانية | جواد</title>
 
-<style>
+    <link rel="stylesheet" href="style.css">
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #101820;
-        color: white;
-        text-align: center;
-    }
+    <style>
+        .page-hero {
+            min-height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+        }
 
-    .container {
-        padding-top: 80px;
-    }
+        .page-card {
+            max-width: 750px;
+            width: 100%;
+            text-align: center;
+            background: #18232e;
+            border: 1px solid #263746;
+            border-radius: 24px;
+            padding: 50px 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: pageAppear 0.7s ease;
+        }
 
-    h1 {
-        font-size: 42px;
-        color: #00aaff;
-        margin-bottom: 15px;
-    }
+        @keyframes pageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
-    .card {
-        width: 80%;
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 30px;
-        background: #182631;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .card h2 {
-        color: #00aaff;
-        font-size: 28px;
-    }
+        .page-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: floating 3s ease-in-out infinite;
+        }
 
-    .card p {
-        color: #dddddd;
-        font-size: 18px;
-        line-height: 1.8;
-    }
+        .page-card h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
 
-    .emoji {
-        font-size: 60px;
-    }
+        .page-card h1 span {
+            color: #00d9ff;
+        }
 
-    .button {
-        display: inline-block;
-        padding: 14px 30px;
-        background: #00aaff;
-        color: white;
-        text-decoration: none;
-        border-radius: 10px;
-        font-size: 18px;
-        transition: 0.3s;
-    }
+        .page-card p {
+            color: #b8c4d0;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
 
-    .button:hover {
-        background: #0077cc;
-        transform: scale(1.05);
-    }
+        .page-card .highlight {
+            color: #00d9ff;
+            font-weight: bold;
+        }
 
-</style>
-```
+        .page-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
+        .page-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #00d9ff;
+            color: #101820;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .page-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.25);
+        }
+
+        .page-button.secondary {
+            background: transparent;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+        }
+
+        body.light-mode .page-card {
+            background: white;
+            border-color: #ddd;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        body.light-mode .page-card p {
+            color: #666;
+        }
+
+        body.light-mode .page-button.secondary {
+            color: #008eaa;
+            border-color: #008eaa;
+        }
+
+        @media (max-width: 700px) {
+
+            .page-card {
+                padding: 40px 20px;
+            }
+
+            .page-card h1 {
+                font-size: 30px;
+            }
+
+            .page-card p {
+                font-size: 16px;
+            }
+
+            .page-icon {
+                font-size: 65px;
+            }
+
+            .page-buttons {
+                flex-direction: column;
+            }
+
+            .page-button {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<div class="container">
+    <!-- شريط التنقل -->
+    <nav class="navbar">
 
-    <h1>🎉 أهلاً بك في الصفحة الثانية!</h1>
+        <div class="logo">
+            جواد 🚀
+        </div>
 
-    <div class="card">
+        <div class="nav-links">
 
-        <div class="emoji">🚀</div>
+            <a href="index.html">الرئيسية</a>
 
-        <h2>مشروعي الأول</h2>
+            <a href="about.html">عني</a>
+
+            <a href="projects.html">مشاريعي</a>
+
+            <a href="contact.html">تواصل معي</a>
+
+            <button id="theme-button" class="theme-button">
+                ☀️
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- محتوى الصفحة -->
+    <main class="page-hero">
+
+        <div class="page-card">
+
+            <div class="page-icon">
+                🎉
+            </div>
+
+            <h1>
+                أهلاً بك في <span>الصفحة الثانية!</span>
+            </h1>
+
+            <p>
+                وصلت إلى صفحة إضافية في موقعي 🚀
+            </p>
+
+            <p>
+                أنا <span class="highlight">جواد</span>،
+                وهذه الصفحة جزء من رحلتي في تعلم تطوير المواقع.
+            </p>
+
+            <p>
+                كل صفحة وكل تجربة جديدة تساعدني على تطوير مهاراتي
+                وبناء مشاريع أفضل في المستقبل. 💻
+            </p>
+
+
+            <div class="page-buttons">
+
+                <a href="index.html" class="page-button">
+                    🏠 الرئيسية
+                </a>
+
+                <a href="projects.html" class="page-button secondary">
+                    🎮 مشاريعي
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- التذييل -->
+    <footer>
 
         <p>
-            أنا أتعلم الآن HTML و CSS وأقوم ببناء
-            موقعي الأول باستخدام GitHub Pages.
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
         </p>
 
         <p>
-            هذه مجرد البداية! 🔥
+            تم التطوير باستخدام ❤️ و HTML و CSS
         </p>
 
-    </div>
+    </footer>
 
-    <a href="index.html" class="button">
-        ⬅️ العودة إلى الصفحة الرئيسية
-    </a>
 
-</div>
-```
+    <!-- الوضع الليلي / الفاتح -->
+    <script>
+
+        const themeButton = document.getElementById("theme-button");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
+
