@@ -66,3 +66,16 @@ button:hover {
 .nav-links a:hover {
     color: #00a8ff;
 }
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: #0077cc;
+}
