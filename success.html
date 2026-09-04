@@ -2,87 +2,180 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>تم الإرسال</title>
+    <title>تم الإرسال | جواد</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <style>
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #101820;
-            color: white;
-            text-align: center;
-        }
-
-        .container {
-            min-height: 100vh;
+        .success-container {
+            min-height: 70vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
+            padding: 50px 20px;
         }
 
-        .card {
-            width: 90%;
-            max-width: 600px;
+        .success-card {
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            background: #18232e;
+            border: 1px solid #263746;
+            border-radius: 24px;
             padding: 50px 30px;
-            background: #182631;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: successAppear 0.7s ease;
         }
 
-        .icon {
-            font-size: 90px;
+        @keyframes successAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .success-icon {
+            font-size: 80px;
             margin-bottom: 20px;
         }
 
-        h1 {
-            color: #00aaff;
-            font-size: 38px;
-            margin-bottom: 20px;
+        .success-card h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
         }
 
-        p {
-            color: #dddddd;
-            font-size: 20px;
-            line-height: 1.8;
+        .success-card h1 span {
+            color: #00d9ff;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            background: #00aaff;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
+        .success-card p {
+            color: #b8c4d0;
             font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .success-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .success-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #00d9ff;
+            color: #101820;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
 
-        .button:hover {
-            background: #0077cc;
-            transform: scale(1.05);
+        .success-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.25);
         }
 
-    </style>
+        .success-button.secondary {
+            background: transparent;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+        }
 
+        body.light-mode .success-card {
+            background: white;
+            border-color: #ddd;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        body.light-mode .success-card p {
+            color: #666;
+        }
+
+        body.light-mode .success-button.secondary {
+            color: #008eaa;
+            border-color: #008eaa;
+        }
+
+        @media (max-width: 600px) {
+
+            .success-card {
+                padding: 40px 20px;
+            }
+
+            .success-card h1 {
+                font-size: 28px;
+            }
+
+            .success-card p {
+                font-size: 16px;
+            }
+
+            .success-icon {
+                font-size: 65px;
+            }
+
+            .success-buttons {
+                flex-direction: column;
+            }
+
+            .success-button {
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- شريط التنقل -->
+    <nav class="navbar">
 
-        <div class="card">
+        <div class="logo">
+            جواد 🚀
+        </div>
 
-            <div class="icon">✅</div>
+        <div class="nav-links">
 
-            <h1>تم إرسال رسالتك بنجاح!</h1>
+            <a href="index.html">الرئيسية</a>
+
+            <a href="about.html">عني</a>
+
+            <a href="projects.html">مشاريعي</a>
+
+            <a href="contact.html">تواصل معي</a>
+
+            <button id="theme-button" class="theme-button">
+                ☀️
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- رسالة النجاح -->
+    <main class="success-container">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✅
+            </div>
+
+            <h1>
+                تم إرسال <span>رسالتك بنجاح!</span>
+            </h1>
 
             <p>
                 شكرًا لتواصلك معي 💙
@@ -90,14 +183,76 @@
                 تم استلام رسالتك وسأطلع عليها قريبًا.
             </p>
 
-            <a href="index.html" class="button">
-                🏠 العودة إلى الرئيسية
-            </a>
+            <div class="success-buttons">
+
+                <a href="index.html" class="success-button">
+                    🏠 العودة للرئيسية
+                </a>
+
+                <a href="projects.html" class="success-button secondary">
+                    🎮 مشاهدة مشاريعي
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+    </main>
+
+
+    <!-- التذييل -->
+    <footer>
+
+        <p>
+            © 2026 جواد — جميع الحقوق محفوظة 🚀
+        </p>
+
+        <p>
+            تم التطوير باستخدام ❤️ و HTML و CSS
+        </p>
+
+    </footer>
+
+
+    <!-- الوضع الليلي -->
+    <script>
+
+        const themeButton = document.getElementById("theme-button");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+            themeButton.textContent = "🌙";
+
+        }
+
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeButton.textContent = "🌙";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeButton.textContent = "☀️";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
+
