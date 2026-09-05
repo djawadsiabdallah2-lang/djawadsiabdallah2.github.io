@@ -251,6 +251,53 @@
 
 
     <!-- =========================
+         تفاعل الزوار
+    ========================== -->
+
+    <section class="home-section">
+
+        <div class="section-title">
+
+            <span>📊</span>
+
+            <h2>إحصائيات الموقع</h2>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>❤️</span>
+
+                <strong id="like-count">0</strong>
+
+                <p>
+                    إعجاب
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="like-box">
+
+            <p>
+                هل أعجبك موقعي؟ 😎
+            </p>
+
+            <button id="like-button">
+                ❤️ أعجبني
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
          المشاريع
     ========================== -->
 
@@ -463,10 +510,14 @@
 
 
     <!-- =========================
-         الوضع الليلي / الفاتح
+         JavaScript
     ========================== -->
 
     <script>
+
+        // =========================
+        // الوضع الليلي / الفاتح
+        // =========================
 
         const themeButton =
             document.getElementById("theme-button");
@@ -507,9 +558,77 @@
 
         });
 
+
+        // =========================
+        // ❤️ نظام الإعجاب
+        // =========================
+
+        const likeButton =
+            document.getElementById("like-button");
+
+        const likeCount =
+            document.getElementById("like-count");
+
+
+        let likes =
+            Number(localStorage.getItem("likes")) || 0;
+
+
+        let liked =
+            localStorage.getItem("liked") === "true";
+
+
+        // عرض عدد الإعجابات
+        likeCount.textContent = likes;
+
+
+        // إذا ضغط الزائر من قبل
+        if (liked) {
+
+            likeButton.textContent = "❤️ أعجبتني";
+
+            likeButton.disabled = true;
+
+        }
+
+
+        // عند الضغط على الإعجاب
+        likeButton.addEventListener("click", function () {
+
+            if (!liked) {
+
+                likes++;
+
+                liked = true;
+
+
+                likeCount.textContent = likes;
+
+
+                localStorage.setItem(
+                    "likes",
+                    likes
+                );
+
+
+                localStorage.setItem(
+                    "liked",
+                    "true"
+                );
+
+
+                likeButton.textContent =
+                    "❤️ أعجبتني";
+
+
+                likeButton.disabled = true;
+
+            }
+
+        });
+
     </script>
 
 </body>
 
 </html>
-
