@@ -510,17 +510,44 @@
 
 
     <!-- =========================
+         Supabase
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- =========================
          JavaScript
     ========================== -->
 
     <script>
 
-        // =========================
+        // =====================================================
+        // إعداد Supabase
+        // =====================================================
+
+        const SUPABASE_URL =
+            "https://havkvegoquujpfdfcjyu.supabase.co/rest/v1/";
+
+        const SUPABASE_KEY =
+            "sb_publishable_fvnhrbc3bhkmGwpHYTvccg_Oico4Wl8";
+        
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        // =====================================================
         // الوضع الليلي / الفاتح
-        // =========================
+        // =====================================================
 
         const themeButton =
             document.getElementById("theme-button");
+
 
         const savedTheme =
             localStorage.getItem("theme");
@@ -546,86 +573,240 @@
 
                 themeButton.textContent = "🌙";
 
-                localStorage.setItem("theme", "light");
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
 
             } else {
 
                 themeButton.textContent = "☀️";
 
-                localStorage.setItem("theme", "dark");
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
 
             }
 
         });
 
 
-        // =========================
+        // =====================================================
         // ❤️ نظام الإعجاب
-        // =========================
+        // =====================================================
 
         const likeButton =
             document.getElementById("like-button");
 
+
         const likeCount =
             document.getElementById("like-count");
-
-
-        let likes =
-            Number(localStorage.getItem("likes")) || 0;
 
 
         let liked =
             localStorage.getItem("liked") === "true";
 
 
-        // عرض عدد الإعجابات
-        likeCount.textContent = likes;
+        // =====================================================
+        // تحميل عدد الإعجابات
+        // =====================================================
+
+        async function loadLikes() {
+
+            const {
+                data,
+                error
+            } = await supabaseClient
+
+                .from("likes")
+
+                .select("count")
+
+                .eq("id", 1)
+
+                .single();
 
 
-        // إذا ضغط الزائر من قبل
-        if (liked) {
+            if (error) {
 
-            likeButton.textContent = "❤️ أعجبتني";
-
-            likeButton.disabled = true;
-
-        }
-
-
-        // عند الضغط على الإعجاب
-        likeButton.addEventListener("click", function () {
-
-            if (!liked) {
-
-                likes++;
-
-                liked = true;
-
-
-                likeCount.textContent = likes;
-
-
-                localStorage.setItem(
-                    "likes",
-                    likes
+                console.error(
+                    "❌ خطأ في تحميل الإعجابات:",
+                    error
                 );
 
+                likeCount.textContent = "خطأ";
 
-                localStorage.setItem(
-                    "liked",
-                    "true"
-                );
+                return;
 
+            }
+
+
+            likeCount.textContent =
+                data.count;
+
+
+            if (liked) {
 
                 likeButton.textContent =
                     "❤️ أعجبتني";
 
-
-                likeButton.disabled = true;
+                likeButton.disabled =
+                    true;
 
             }
 
-        });
+        }
+
+
+        // =====================================================
+        // إضافة إعجاب
+        // =====================================================
+
+        async function addLike() {
+
+            if (liked) {
+
+                return;
+
+            }
+
+
+            likeButton.disabled =
+                true;
+
+
+            likeButton.textContent =
+                "⏳ جاري الحفظ...";
+
+
+            // الحصول على العدد الحالي
+
+            const {
+                data,
+                error: selectError
+            } = await supabaseClient
+
+                .from("likes")
+
+                .select("count")
+
+                .eq("id", 1)
+
+                .single();
+
+
+            if (selectError) {
+
+                console.error(
+                    "❌ خطأ في قراءة الإعجابات:",
+                    selectError
+                );
+
+
+                likeButton.disabled =
+                    false;
+
+
+                likeButton.textContent =
+                    "❤️ أعجبني";
+
+
+                return;
+
+            }
+
+
+            // زيادة العدد
+
+            const newCount =
+                Number(data.count) + 1;
+
+
+            // تحديث قاعدة البيانات
+
+            const {
+                error: updateError
+            } = await supabaseClient
+
+                .from("likes")
+
+                .update({
+                    count: newCount
+                })
+
+                .eq("id", 1);
+
+
+            if (updateError) {
+
+                console.error(
+                    "❌ خطأ في تحديث الإعجابات:",
+                    updateError
+                );
+
+
+                likeButton.disabled =
+                    false;
+
+
+                likeButton.textContent =
+                    "❤️ أعجبني";
+
+
+                return;
+
+            }
+
+
+            // تحديث العدد في الصفحة
+
+            likeCount.textContent =
+                newCount;
+
+
+            // حفظ أن الزائر ضغط
+
+            liked = true;
+
+
+            localStorage.setItem(
+                "liked",
+                "true"
+            );
+
+
+            likeButton.textContent =
+                "❤️ أعجبتني";
+
+
+            likeButton.disabled =
+                true;
+
+
+            console.log(
+                "❤️ تم تسجيل الإعجاب:",
+                newCount
+            );
+
+        }
+
+
+        // =====================================================
+        // زر الإعجاب
+        // =====================================================
+
+        likeButton.addEventListener(
+            "click",
+            addLike
+        );
+
+
+        // =====================================================
+        // تشغيل النظام
+        // =====================================================
+
+        loadLikes();
 
     </script>
 
