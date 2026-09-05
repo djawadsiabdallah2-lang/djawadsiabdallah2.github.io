@@ -8,6 +8,9 @@
     <title>جواد | مطور ومصمم</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -18,41 +21,34 @@
 
     <nav class="navbar">
 
-        <h2>جواد 🚀</h2>
+        <div class="logo">
+            جواد 🚀
+        </div>
 
         <div class="nav-links">
-
-            <a href="index.html" class="active">الرئيسية</a>
-
-            <a href="about.html">عني</a>
-
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من أنا</a>
             <a href="projects.html">مشاريعي</a>
-
             <a href="contact.html">تواصل معي</a>
 
-            <button id="theme-button" class="theme-button">
-                ☀️
+            <button id="theme-button">
+                🌙
             </button>
-
         </div>
 
     </nav>
 
 
     <!-- =========================
-         الواجهة الرئيسية
+         القسم الرئيسي
     ========================== -->
 
-    <header class="hero">
+    <section class="hero">
 
         <div class="hero-content">
 
-            <span class="welcome-badge">
-                👋 أهلاً بك في موقعي
-            </span>
-
             <h1>
-                مرحباً، أنا <span>جواد</span> 🚀
+                مرحباً، أنا جواد 🚀
             </h1>
 
             <p>
@@ -62,11 +58,11 @@
 
             <div class="hero-buttons">
 
-                <a href="projects.html" class="button">
-                    🎮 شاهد مشاريعي
+                <a href="projects.html" class="main-button">
+                    🚀 شاهد مشاريعي
                 </a>
 
-                <a href="contact.html" class="button secondary-button">
+                <a href="contact.html" class="secondary-button">
                     📩 تواصل معي
                 </a>
 
@@ -74,57 +70,31 @@
 
         </div>
 
-
-        <div class="hero-card">
-
-            <div class="code-icon">
-                &lt;/&gt;
-            </div>
-
-            <h3>
-                مطور مبتدئ 🚀
-            </h3>
-
-            <p>
-                أتعلم، أجرب، وأطور مشاريعي
-                خطوة بخطوة.
-            </p>
-
-        </div>
-
-    </header>
+    </section>
 
 
     <!-- =========================
-         عني
+         من أنا
     ========================== -->
 
     <section class="home-section">
 
         <div class="section-title">
-
             <span>👨‍💻</span>
-
             <h2>من أنا؟</h2>
-
         </div>
 
-
-        <div class="home-card">
-
-            <h3>
-                شغوف بالتعلم وصناعة الأشياء الجديدة 🔥
-            </h3>
+        <div class="about-card">
 
             <p>
-                أنا أتعلم تطوير المواقع والألعاب،
-                وأحب تجربة أفكار جديدة وتحويلها
-                إلى مشاريع حقيقية.
+                أنا جواد، أتعلم البرمجة وأحب تصميم المواقع
+                وتطوير الألعاب ثلاثية الأبعاد باستخدام Godot.
             </p>
 
-            <a href="about.html" class="text-button">
-                معرفة المزيد ←
-            </a>
+            <p>
+                أحب تجربة أفكار جديدة وتحويلها إلى مشاريع
+                حقيقية أستطيع تطويرها مع الوقت.
+            </p>
 
         </div>
 
@@ -138,76 +108,34 @@
     <section class="home-section">
 
         <div class="section-title">
-
-            <span>🛠️</span>
-
+            <span>💻</span>
             <h2>مهاراتي</h2>
-
         </div>
-
 
         <div class="skills-grid">
 
             <div class="skill-card">
-
-                <div class="skill-icon">
-                    🌐
-                </div>
-
+                <span>🌐</span>
                 <h3>HTML</h3>
-
-                <p>
-                    بناء صفحات الويب وتنظيم المحتوى.
-                </p>
-
+                <p>إنشاء صفحات ومواقع الويب.</p>
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-icon">
-                    🎨
-                </div>
-
+                <span>🎨</span>
                 <h3>CSS</h3>
-
-                <p>
-                    تصميم المواقع وإضافة
-                    التأثيرات والحركات.
-                </p>
-
+                <p>تصميم وتنسيق المواقع.</p>
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-icon">
-                    🎮
-                </div>
-
+                <span>🎮</span>
                 <h3>Godot</h3>
-
-                <p>
-                    تطوير ألعاب ثلاثية الأبعاد
-                    باستخدام Godot 4.
-                </p>
-
+                <p>تطوير الألعاب ثلاثية الأبعاد.</p>
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-icon">
-                    💻
-                </div>
-
+                <span>⚙️</span>
                 <h3>GDScript</h3>
-
-                <p>
-                    كتابة الأكواد والتحكم
-                    في عناصر اللعبة.
-                </p>
-
+                <p>برمجة أنظمة الألعاب.</p>
             </div>
 
         </div>
@@ -219,68 +147,43 @@
          الإحصائيات
     ========================== -->
 
-    <section class="stats-section">
-
-        <div class="stat">
-
-            <strong>2+</strong>
-
-            <span>مشاريع</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>4</strong>
-
-            <span>تقنيات</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>∞</strong>
-
-            <span>أفكار جديدة</span>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         تفاعل الزوار
-    ========================== -->
-
     <section class="home-section">
 
         <div class="section-title">
-
             <span>📊</span>
-
             <h2>إحصائيات الموقع</h2>
-
         </div>
-
 
         <div class="stats-grid">
 
             <div class="stat-card">
+                <span>🚀</span>
+                <strong>2+</strong>
+                <p>مشاريع</p>
+            </div>
 
+            <div class="stat-card">
+                <span>💻</span>
+                <strong>4</strong>
+                <p>تقنيات</p>
+            </div>
+
+            <div class="stat-card">
+                <span>💡</span>
+                <strong>∞</strong>
+                <p>أفكار جديدة</p>
+            </div>
+
+            <div class="stat-card">
                 <span>❤️</span>
-
                 <strong id="like-count">0</strong>
-
-                <p>
-                    إعجاب
-                </p>
-
+                <p>إعجاب</p>
             </div>
 
         </div>
 
+
+        <!-- زر الإعجاب -->
 
         <div class="like-box">
 
@@ -298,65 +201,34 @@
 
 
     <!-- =========================
-         المشاريع
+         أحدث المشاريع
     ========================== -->
 
     <section class="home-section">
 
         <div class="section-title">
-
             <span>🚀</span>
-
             <h2>أحدث مشاريعي</h2>
-
         </div>
-
 
         <div class="projects-grid">
 
             <div class="project-card">
 
-                <div class="project-icon">
+                <span class="project-icon">
                     🌐
-                </div>
+                </span>
 
                 <h3>
                     موقعي الأول
                 </h3>
 
                 <p>
-                    أول موقع شخصي أقوم ببنائه
-                    باستخدام HTML و CSS.
+                    موقع شخصي صممته باستخدام HTML و CSS.
                 </p>
 
-                <a href="project1.html" class="text-button">
-                    عرض المشروع →
-                </a>
-
-            </div>
-
-
-            <div class="project-card featured-project">
-
-                <div class="project-icon">
-                    🎮
-                </div>
-
-                <span class="project-badge">
-                    ⭐ المشروع الرئيسي
-                </span>
-
-                <h3>
-                    لعبة ثلاثية الأبعاد
-                </h3>
-
-                <p>
-                    مشروع لعبة 3D أقوم بتطويرها
-                    باستخدام Godot 4 و GDScript.
-                </p>
-
-                <a href="project2.html" class="text-button">
-                    عرض المشروع →
+                <a href="projects.html">
+                    مشاهدة المشروع →
                 </a>
 
             </div>
@@ -364,22 +236,43 @@
 
             <div class="project-card">
 
-                <div class="project-icon">
-                    💡
-                </div>
+                <span class="project-icon">
+                    🎮
+                </span>
+
+                <h3>
+                    لعبة 3D في Godot
+                </h3>
+
+                <p>
+                    لعبة ثلاثية الأبعاد تحتوي على سيارة
+                    وأعداء وأسلحة ومهام.
+                </p>
+
+                <a href="projects.html">
+                    مشاهدة المشروع →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span class="project-icon">
+                    🔜
+                </span>
 
                 <h3>
                     مشروع قادم
                 </h3>
 
                 <p>
-                    هناك المزيد من الأفكار
-                    والمشاريع في الطريق...
+                    أعمل حاليًا على أفكار ومشاريع جديدة.
                 </p>
 
-                <span class="coming-soon">
-                    قريباً 🔥
-                </span>
+                <a href="projects.html">
+                    قريبًا →
+                </a>
 
             </div>
 
@@ -395,70 +288,31 @@
     <section class="home-section">
 
         <div class="section-title">
-
             <span>🏆</span>
-
             <h2>إنجازاتي</h2>
-
         </div>
-
 
         <div class="achievements">
 
-            <div class="achievement">
-
-                <span>✅</span>
-
-                <div>
-
-                    <h3>
-                        إنشاء أول موقع
-                    </h3>
-
-                    <p>
-                        بناء ونشر موقع شخصي باستخدام GitHub Pages.
-                    </p>
-
-                </div>
-
+            <div class="achievement-card">
+                🏆
+                <p>
+                    إنشاء أول موقع شخصي
+                </p>
             </div>
 
-
-            <div class="achievement">
-
-                <span>🎮</span>
-
-                <div>
-
-                    <h3>
-                        تطوير لعبة 3D
-                    </h3>
-
-                    <p>
-                        بناء أنظمة متعددة داخل مشروع لعبة باستخدام Godot.
-                    </p>
-
-                </div>
-
+            <div class="achievement-card">
+                🎮
+                <p>
+                    تطوير لعبة 3D في Godot
+                </p>
             </div>
 
-
-            <div class="achievement">
-
-                <span>📚</span>
-
-                <div>
-
-                    <h3>
-                        الاستمرار في التعلم
-                    </h3>
-
-                    <p>
-                        تعلم تقنيات جديدة وتطوير المشاريع باستمرار.
-                    </p>
-
-                </div>
-
+            <div class="achievement-card">
+                💻
+                <p>
+                    تعلم HTML و CSS
+                </p>
             </div>
 
         </div>
@@ -467,25 +321,65 @@
 
 
     <!-- =========================
-         دعوة للتواصل
+         💬 التعليقات
     ========================== -->
 
-    <section class="contact-banner">
+    <section class="comments-section">
 
-        <div>
+        <div class="section-title">
+            <span>💬</span>
+            <h2>آراء الزوار</h2>
+        </div>
 
-            <h2>
-                هل تريد التواصل معي؟ 📩
-            </h2>
 
-            <p>
-                يمكنك إرسال رسالة لي من خلال صفحة التواصل.
-            </p>
+        <div class="comment-box">
+
+            <input
+                type="text"
+                id="comment-name"
+                placeholder="اكتب اسمك"
+                maxlength="30"
+            >
+
+            <textarea
+                id="comment-message"
+                placeholder="اكتب رأيك في موقعي..."
+                maxlength="300"
+            ></textarea>
+
+            <button id="comment-button">
+                💬 إرسال التعليق
+            </button>
+
+            <p id="comment-status"></p>
 
         </div>
 
 
-        <a href="contact.html" class="button">
+        <div id="comments-list">
+
+            <!-- التعليقات ستظهر هنا -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         التواصل
+    ========================== -->
+
+    <section class="contact-banner">
+
+        <h2>
+            هل تريد التواصل معي؟ 📩
+        </h2>
+
+        <p>
+            يمكنك إرسال رسالة لي من صفحة التواصل.
+        </p>
+
+        <a href="contact.html">
             تواصل معي
         </a>
 
@@ -499,21 +393,10 @@
     <footer>
 
         <p>
-            © 2026 جواد — جميع الحقوق محفوظة 🚀
-        </p>
-
-        <p>
-            تم التطوير باستخدام ❤️ و HTML و CSS
+            © 2026 جواد | جميع الحقوق محفوظة 🚀
         </p>
 
     </footer>
-
-
-    <!-- =========================
-         Supabase
-    ========================== -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
     <!-- =========================
@@ -522,16 +405,15 @@
 
     <script>
 
-        // =====================================================
-        // إعداد Supabase
-        // =====================================================
+        // =====================================
+        // Supabase
+        // =====================================
 
         const SUPABASE_URL =
-    "https://havkvegoquujpfdfcjyu.supabase.co";
+            "https://havkvegoquujpfdfcjyu.supabase.co";
 
         const SUPABASE_KEY =
-            "sb_publishable_fvnhrbc3bhkmGwpHYTvccg_Oico4Wl8";
-        
+            "ضع_مفتاح_Publishable_الخاص_بك_هنا";
 
 
         const supabaseClient =
@@ -541,91 +423,67 @@
             );
 
 
-        // =====================================================
-        // الوضع الليلي / الفاتح
-        // =====================================================
+        // =====================================
+        // الوضع الليلي / النهاري
+        // =====================================
 
         const themeButton =
             document.getElementById("theme-button");
 
-
         const savedTheme =
             localStorage.getItem("theme");
-
 
         if (savedTheme === "light") {
 
             document.body.classList.add("light-mode");
 
-            themeButton.textContent = "🌙";
+            themeButton.textContent = "☀️";
 
         }
 
 
-        themeButton.addEventListener("click", function () {
+        themeButton.addEventListener("click", () => {
 
             document.body.classList.toggle("light-mode");
-
 
             if (
                 document.body.classList.contains("light-mode")
             ) {
 
-                themeButton.textContent = "🌙";
-
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
-
-            } else {
+                localStorage.setItem("theme", "light");
 
                 themeButton.textContent = "☀️";
 
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
+            } else {
+
+                localStorage.setItem("theme", "dark");
+
+                themeButton.textContent = "🌙";
 
             }
 
         });
 
 
-        // =====================================================
-        // ❤️ نظام الإعجاب
-        // =====================================================
+        // =====================================
+        // الإعجابات
+        // =====================================
 
         const likeButton =
             document.getElementById("like-button");
-
 
         const likeCount =
             document.getElementById("like-count");
 
 
-        let liked =
-            localStorage.getItem("liked") === "true";
-
-
-        // =====================================================
-        // تحميل عدد الإعجابات
-        // =====================================================
-
         async function loadLikes() {
 
-            const {
-                data,
-                error
-            } = await supabaseClient
-
-                .from("likes")
-
-                .select("count")
-
-                .eq("id", 1)
-
-                .single();
+            const { data, error } =
+                await supabaseClient
+                    .from("likes")
+                    .select("count")
+                    .eq("id", 1)
+                    .single();
 
 
             if (error) {
@@ -635,139 +493,75 @@
                     error
                 );
 
-                likeCount.textContent = "خطأ";
-
                 return;
-
             }
 
 
             likeCount.textContent =
                 data.count;
 
-
-            if (liked) {
-
-                likeButton.textContent =
-                    "❤️ أعجبتني";
-
-                likeButton.disabled =
-                    true;
-
-            }
-
         }
 
 
-        // =====================================================
-        // إضافة إعجاب
-        // =====================================================
-
         async function addLike() {
 
-            if (liked) {
+            const alreadyLiked =
+                localStorage.getItem("liked");
+
+
+            if (alreadyLiked) {
+
+                alert("❤️ لقد أعجبت بالموقع من قبل!");
 
                 return;
-
             }
 
 
-            likeButton.disabled =
-                true;
+            const { data, error } =
+                await supabaseClient
+                    .from("likes")
+                    .select("count")
+                    .eq("id", 1)
+                    .single();
 
 
-            likeButton.textContent =
-                "⏳ جاري الحفظ...";
-
-
-            // الحصول على العدد الحالي
-
-            const {
-                data,
-                error: selectError
-            } = await supabaseClient
-
-                .from("likes")
-
-                .select("count")
-
-                .eq("id", 1)
-
-                .single();
-
-
-            if (selectError) {
+            if (error) {
 
                 console.error(
                     "❌ خطأ في قراءة الإعجابات:",
-                    selectError
+                    error
                 );
 
-
-                likeButton.disabled =
-                    false;
-
-
-                likeButton.textContent =
-                    "❤️ أعجبني";
-
-
                 return;
-
             }
 
 
-            // زيادة العدد
-
             const newCount =
-                Number(data.count) + 1;
+                data.count + 1;
 
 
-            // تحديث قاعدة البيانات
-
-            const {
-                error: updateError
-            } = await supabaseClient
-
-                .from("likes")
-
-                .update({
-                    count: newCount
-                })
-
-                .eq("id", 1);
+            const { error: updateError } =
+                await supabaseClient
+                    .from("likes")
+                    .update({
+                        count: newCount
+                    })
+                    .eq("id", 1);
 
 
             if (updateError) {
 
                 console.error(
-                    "❌ خطأ في تحديث الإعجابات:",
+                    "❌ خطأ في تحديث الإعجاب:",
                     updateError
                 );
 
-
-                likeButton.disabled =
-                    false;
-
-
-                likeButton.textContent =
-                    "❤️ أعجبني";
-
-
                 return;
-
             }
 
 
-            // تحديث العدد في الصفحة
-
             likeCount.textContent =
                 newCount;
-
-
-            // حفظ أن الزائر ضغط
-
-            liked = true;
 
 
             localStorage.setItem(
@@ -777,24 +571,13 @@
 
 
             likeButton.textContent =
-                "❤️ أعجبتني";
+                "❤️ أعجبت بالموقع";
 
 
-            likeButton.disabled =
-                true;
-
-
-            console.log(
-                "❤️ تم تسجيل الإعجاب:",
-                newCount
-            );
+            likeButton.disabled = true;
 
         }
 
-
-        // =====================================================
-        // زر الإعجاب
-        // =====================================================
 
         likeButton.addEventListener(
             "click",
@@ -802,11 +585,193 @@
         );
 
 
-        // =====================================================
-        // تشغيل النظام
-        // =====================================================
-
         loadLikes();
+
+
+        // =====================================
+        // التعليقات
+        // =====================================
+
+        const commentName =
+            document.getElementById(
+                "comment-name"
+            );
+
+
+        const commentMessage =
+            document.getElementById(
+                "comment-message"
+            );
+
+
+        const commentButton =
+            document.getElementById(
+                "comment-button"
+            );
+
+
+        const commentStatus =
+            document.getElementById(
+                "comment-status"
+            );
+
+
+        const commentsList =
+            document.getElementById(
+                "comments-list"
+            );
+
+
+        // =====================================
+        // تحميل التعليقات
+        // =====================================
+
+        async function loadComments() {
+
+            const { data, error } =
+                await supabaseClient
+                    .from("comments")
+                    .select(
+                        "id, name, message, created_at"
+                    )
+                    .order(
+                        "created_at",
+                        {
+                            ascending: false
+                        }
+                    );
+
+
+            if (error) {
+
+                console.error(
+                    "❌ خطأ في تحميل التعليقات:",
+                    error
+                );
+
+                return;
+            }
+
+
+            commentsList.innerHTML = "";
+
+
+            data.forEach(comment => {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "comment-card";
+
+
+                const name =
+                    document.createElement("h3");
+
+                name.textContent =
+                    "👤 " + comment.name;
+
+
+                const message =
+                    document.createElement("p");
+
+                message.textContent =
+                    comment.message;
+
+
+                card.appendChild(name);
+
+                card.appendChild(message);
+
+                commentsList.appendChild(card);
+
+            });
+
+        }
+
+
+        // =====================================
+        // إرسال تعليق
+        // =====================================
+
+        async function addComment() {
+
+            const name =
+                commentName.value.trim();
+
+
+            const message =
+                commentMessage.value.trim();
+
+
+            if (!name || !message) {
+
+                commentStatus.textContent =
+                    "⚠️ اكتب اسمك وتعليقك أولًا.";
+
+                return;
+
+            }
+
+
+            commentButton.disabled = true;
+
+            commentStatus.textContent =
+                "⏳ جارٍ إرسال التعليق...";
+
+
+            const { error } =
+                await supabaseClient
+                    .from("comments")
+                    .insert([
+                        {
+                            name: name,
+                            message: message
+                        }
+                    ]);
+
+
+            if (error) {
+
+                console.error(
+                    "❌ خطأ في إرسال التعليق:",
+                    error
+                );
+
+                commentStatus.textContent =
+                    "❌ حدث خطأ أثناء إرسال التعليق.";
+
+                commentButton.disabled = false;
+
+                return;
+
+            }
+
+
+            commentStatus.textContent =
+                "✅ تم إرسال تعليقك بنجاح!";
+
+
+            commentName.value = "";
+
+            commentMessage.value = "";
+
+
+            commentButton.disabled = false;
+
+
+            loadComments();
+
+        }
+
+
+        commentButton.addEventListener(
+            "click",
+            addComment
+        );
+
+
+        loadComments();
 
     </script>
 
