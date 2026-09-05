@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -94,9 +95,7 @@
 
         <div class="section-title">
 
-            <span>
-                👨‍💻
-            </span>
+            <span>👨‍💻</span>
 
             <h2>
                 من أنا؟
@@ -130,9 +129,7 @@
 
         <div class="section-title">
 
-            <span>
-                💻
-            </span>
+            <span>💻</span>
 
             <h2>
                 مهاراتي
@@ -145,9 +142,7 @@
 
             <div class="skill-card">
 
-                <span>
-                    🌐
-                </span>
+                <span>🌐</span>
 
                 <h3>
                     HTML
@@ -162,9 +157,7 @@
 
             <div class="skill-card">
 
-                <span>
-                    🎨
-                </span>
+                <span>🎨</span>
 
                 <h3>
                     CSS
@@ -179,9 +172,7 @@
 
             <div class="skill-card">
 
-                <span>
-                    🎮
-                </span>
+                <span>🎮</span>
 
                 <h3>
                     Godot
@@ -196,9 +187,7 @@
 
             <div class="skill-card">
 
-                <span>
-                    ⚙️
-                </span>
+                <span>⚙️</span>
 
                 <h3>
                     GDScript
@@ -223,9 +212,7 @@
 
         <div class="section-title">
 
-            <span>
-                📊
-            </span>
+            <span>📊</span>
 
             <h2>
                 إحصائيات الموقع
@@ -238,9 +225,7 @@
 
             <div class="stat-card">
 
-                <span>
-                    🚀
-                </span>
+                <span>🚀</span>
 
                 <strong>
                     2+
@@ -255,9 +240,7 @@
 
             <div class="stat-card">
 
-                <span>
-                    💻
-                </span>
+                <span>💻</span>
 
                 <strong>
                     4
@@ -272,9 +255,7 @@
 
             <div class="stat-card">
 
-                <span>
-                    💡
-                </span>
+                <span>💡</span>
 
                 <strong>
                     ∞
@@ -289,9 +270,7 @@
 
             <div class="stat-card">
 
-                <span>
-                    ❤️
-                </span>
+                <span>❤️</span>
 
                 <strong id="like-count">
                     0
@@ -333,9 +312,7 @@
 
         <div class="section-title">
 
-            <span>
-                🚀
-            </span>
+            <span>🚀</span>
 
             <h2>
                 أحدث مشاريعي
@@ -345,7 +322,6 @@
 
 
         <div class="projects-grid">
-
 
             <div class="project-card">
 
@@ -423,9 +399,7 @@
 
         <div class="section-title">
 
-            <span>
-                🏆
-            </span>
+            <span>🏆</span>
 
             <h2>
                 إنجازاتي
@@ -481,9 +455,7 @@
 
         <div class="section-title">
 
-            <span>
-                💬
-            </span>
+            <span>💬</span>
 
             <h2>
                 آراء الزوار
@@ -612,7 +584,6 @@
         }
 
 
-
         themeButton.addEventListener(
             "click",
             () => {
@@ -633,7 +604,6 @@
                         "light"
                     );
 
-
                     themeButton.textContent =
                         "☀️";
 
@@ -643,7 +613,6 @@
                         "theme",
                         "dark"
                     );
-
 
                     themeButton.textContent =
                         "🌙";
@@ -705,7 +674,7 @@
                 data.count ?? 0;
 
 
-            // هل أعجب هذا المتصفح من قبل؟
+            // إذا كان هذا المتصفح قد أعجب من قبل
             if (
                 localStorage.getItem(
                     "liked"
@@ -714,7 +683,6 @@
 
                 likeButton.textContent =
                     "❤️ أعجبت بالموقع";
-
 
                 likeButton.disabled =
                     true;
@@ -726,7 +694,7 @@
 
 
         // =====================================
-        // إضافة إعجاب
+        // إضافة إعجاب ❤️
         // =====================================
 
         async function addLike() {
@@ -747,7 +715,7 @@
             }
 
 
-            // منع الضغط عدة مرات
+            // تعطيل الزر أثناء العملية
             likeButton.disabled =
                 true;
 
@@ -756,19 +724,19 @@
                 "⏳ جارٍ إضافة الإعجاب...";
 
 
-            // قراءة العدد الحالي
+            // استدعاء دالة Supabase
             const { data, error } =
                 await supabaseClient
-                    .from("likes")
-                    .select("count")
-                    .eq("id", 1)
-                    .single();
+                    .rpc(
+                        "increment_like"
+                    );
 
 
+            // في حالة وجود خطأ
             if (error) {
 
                 console.error(
-                    "❌ خطأ في قراءة الإعجابات:",
+                    "❌ خطأ في إضافة الإعجاب:",
                     error
                 );
 
@@ -785,61 +753,19 @@
             }
 
 
-            const currentCount =
-                Number(data.count) || 0;
-
-
-            const newCount =
-                currentCount + 1;
-
-
-            // تحديث العدد
-            const {
-                data: updatedData,
-                error: updateError
-            } =
-                await supabaseClient
-                    .from("likes")
-                    .update({
-                        count: newCount
-                    })
-                    .eq("id", 1)
-                    .select("count")
-                    .single();
-
-
-            if (updateError) {
-
-                console.error(
-                    "❌ خطأ في تحديث الإعجابات:",
-                    updateError
-                );
-
-
-                likeButton.disabled =
-                    false;
-
-
-                likeButton.textContent =
-                    "❤️ أعجبني";
-
-                return;
-
-            }
-
-
-            // عرض العدد الجديد
+            // تحديث العدد مباشرة
             likeCount.textContent =
-                updatedData.count;
+                data;
 
 
-            // حفظ الإعجاب محليًا
+            // حفظ الإعجاب في المتصفح
             localStorage.setItem(
                 "liked",
                 "true"
             );
 
 
+            // تغيير حالة الزر
             likeButton.textContent =
                 "❤️ أعجبت بالموقع";
 
@@ -849,11 +775,11 @@
 
 
             console.log(
-                "❤️ تم إضافة إعجاب جديد!"
+                "❤️ تم إضافة الإعجاب بنجاح! العدد:",
+                data
             );
 
         }
-
 
 
         likeButton.addEventListener(
@@ -862,7 +788,7 @@
         );
 
 
-        // تحميل الإعجابات
+        // تحميل الإعجابات عند فتح الصفحة
         loadLikes();
 
 
@@ -1076,7 +1002,6 @@
             loadComments();
 
         }
-
 
 
         commentButton.addEventListener(
